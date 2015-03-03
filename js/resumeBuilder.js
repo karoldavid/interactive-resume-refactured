@@ -51,9 +51,9 @@ var bio = {
     "twitter" : "@karoldawid",
     "location" : "Berlin, Germany"
   },
-  "WelcomeMsg": "Hi there!",
+  "welcomeMsg": "Hi there!",
   "bioPic" : "images/karol.png",
-  "skills": ["awesomeness","programming","teaching","JS"]
+  "skills": ["Mobile Development","Responsive Websites","JS","PHP", "Flex-Box", "Wordpress"]
 };
 
 var education = {
@@ -91,6 +91,22 @@ var education = {
 ]
 };
 
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
+var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGithub);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
+
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").append(formattedBioPic);
+
+var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
+$("#header").append(formattedWelcomeMsg);
 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
@@ -104,10 +120,22 @@ if ( bio.skills.length > 0 )
   for (skill in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
     $("#skills").append(formattedSkill);
+    }
 }
 
-};
+function displayWork() {
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    $(".work-entry:last").append(formattedEmployer + formattedTitle);
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    $(".work-entry:last").append(formattedDates);
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedLocation);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDescription);
+    }
+}
 
-// for (jobs in work) {
-//
-// };
+displayWork();
