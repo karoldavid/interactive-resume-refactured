@@ -90,3 +90,24 @@ var education = {
     }
 ]
 };
+
+
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").prepend(formattedName);
+
+if ( bio.skills.length > 0 )
+{
+  $("#header").append(HTMLskillsStart);
+  for (skill in bio.skills) {
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+    $("#skills").append(formattedSkill);
+}
+
+};
+
+// for (jobs in work) {
+//
+// };
