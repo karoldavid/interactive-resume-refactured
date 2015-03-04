@@ -150,6 +150,6 @@ function inName(oldName) {
     return finalName;
 };
 
-//$("#main").append(internationalizeButton);
+$("#main").append(internationalizeButton);
 
 displayWork();
