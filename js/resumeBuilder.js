@@ -25,18 +25,18 @@ var work = {
 };
 
 var projects = {
-   "project": [
+   "projects": [
      {
        "title" : "Responsive Website",
        "dates" : "2015",
        "description" : "http://www.susanne-fuelscher.de/" ,
-       "images" : ["images/one.png","images/two.png","images/three.png"]
+       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
    },
    {
-      "title" : "Responsive Website",
-      "dates" : "2015",
-      "description" : "http://www.susanne-fuelscher.de/" ,
-      "images" : ["images/one.png","images/two.png","images/three.png"]
+      "title" : "PR Event",
+      "dates" : "2009",
+      "description" : "International Consumer Electronics (IFA)" ,
+      "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
    }
  ]
 };
@@ -150,6 +150,23 @@ function inName(oldName) {
     return finalName;
 };
 
-$("#main").append(internationalizeButton);
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedProjectTitle);
+    var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedProjectDates);
+    var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedProjectDescription);
+    for (image in projects.projects[project].images) {
+      var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+      $(".project-entry:last").append(formattedImage);
+    }
+  }
+};
 
+//$("#main").append(internationalizeButton);
 displayWork();
+projects.display();
+//$("#mapDiv").append(googleMap);
