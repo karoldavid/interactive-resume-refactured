@@ -3,7 +3,7 @@ var work = {
     {
       "employer" : "agileTournee",
       "title" : "Event Manager",
-      "location" : "Berlin Germany",
+      "location" : "Berlin, Germany",
       "dates": "2011-2015",
       "description" : "Event Management"
     },
@@ -36,6 +36,24 @@ var projects = {
       "title" : "PR Event",
       "dates" : "2009",
       "description" : "International Consumer Electronics (IFA)" ,
+      "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
+   },
+   {
+     "title" : "Stage chez Doc en Stock",
+     "dates" : "2005",
+     "description" : "Stage journalistique chez Doc en Stock Paris" ,
+     "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
+   },
+   {
+      "title" : "Nouvelle PAC de L'UE",
+      "dates" : "2004",
+      "description" : "Bourse de la Fondation Robert Bosch pour au sein de la CFPJ de Paris",
+      "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
+   },
+   {
+      "title" : "Concours de L'Express",
+      "dates" : "2004-2005",
+      "description" : "3ieme place" ,
       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
    }
  ]
@@ -166,7 +184,10 @@ projects.display = function() {
   }
 };
 
-//$("#main").append(internationalizeButton);
+$("#main").append(internationalizeButton);
+
 displayWork();
+
 projects.display();
-//$("#mapDiv").append(googleMap);
+
+$("#mapDiv").append(googleMap);
