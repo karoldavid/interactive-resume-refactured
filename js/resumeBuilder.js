@@ -1,3 +1,18 @@
+var bio = {
+  "name" : "Karol Zyskowski",
+  "role": "Web Developer",
+  "contacts" : {
+    "mobile" : "+49 179 780 966 4",
+    "email" : "k.zysk@zoho.com",
+    "github" : "@karoldavid",
+    "twitter" : "@karoldawid",
+    "location" : "Berlin, Germany"
+  },
+  "welcomeMsg": "Hi there!",
+  "bioPic" : "images/karol.png",
+  "skills": ["Mobile Development","Responsive Websites","Python","JavaScript","PHP", "Wordpress"]
+};
+
 var work = {
   "jobs" : [
     {
@@ -5,22 +20,38 @@ var work = {
       "title" : "Event Manager",
       "location" : "Berlin, Germany",
       "dates": "2011-2015",
-      "description" : "Event Management"
+      "description" : "Event Management",
+      "url" : "http://www.agiletournee.com/"
     },
     {
       "employer" : "Google (Manpower)",
       "title" : "Legal Removals Specialist",
-      "location" : "Dublin Ireland",
+      "location" : "Dublin, Ireland",
       "dates": "2014",
       "description" : "The Right to be forgotten project"
     },
     {
       "employer" : "Constanza Macras | DorkyPark GmbH",
       "title" : "Production Manager",
-      "location" : "Berlin Germany",
+      "location" : "Berlin, Germany",
       "dates": "2010-2011",
       "description" : "Tour Performance Management"
-    }
+    },
+    {
+      "employer" : "AHK Polska - Wiadomosci Gospodarcze",
+      "title" : "Freelance Writer",
+      "location" : "Warsaw, Poland",
+      "dates": "2008-2009",
+      "description" : "Conducted Interviews, wrote articles, planned four magazines"
+    },
+    {
+      "employe" : "Doc en Stock",
+      "title" : "Journalist stagiare",
+      "location" : "Paris, France",
+      "dates" : "2005",
+      "description" : "Casted and invited guests for TV debates, researched and wrote treatments for pitching sessions" ,
+      "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
+    },
   ]
 };
 
@@ -30,19 +61,13 @@ var projects = {
        "title" : "Responsive Website",
        "dates" : "2015",
        "description" : "http://www.susanne-fuelscher.de/" ,
-       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
+       "images" : ["images/susanne-fuelscher_small.jpg"]
    },
    {
       "title" : "PR Event",
       "dates" : "2009",
       "description" : "International Consumer Electronics (IFA)" ,
       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
-   },
-   {
-     "title" : "Stage chez Doc en Stock",
-     "dates" : "2005",
-     "description" : "Stage journalistique chez Doc en Stock Paris" ,
-     "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
    },
    {
       "title" : "Nouvelle PAC de L'UE",
@@ -59,41 +84,26 @@ var projects = {
  ]
 };
 
-var bio = {
-  "name" : "Karol Zyskowski",
-  "role": "Web Developer",
-  "contacts" : {
-    "mobile" : "+49 179 780 966 4",
-    "email" : "k.zysk@zoho.com",
-    "github" : "@karoldavid",
-    "twitter" : "@karoldawid",
-    "location" : "Berlin, Germany"
-  },
-  "welcomeMsg": "Hi there!",
-  "bioPic" : "images/karol.png",
-  "skills": ["Mobile Development","Responsive Websites","JS","PHP", "Flex-Box", "Wordpress"]
-};
-
 var education = {
   "schools" : [
   {
     "name" : "University Bremen",
-    "location" : "Bremen, Germany",
+    "location" : "Bremen Germany",
     "degree" : "Master in Political Science",
     "major" : ["Political Science", "French Studies"],
-    "year" : "2001-2007",
+    "dates" : "2001-2007",
     "url" : "http://www.uni-bremen.de/"
   },
   {
     "name" : "Institut d'Etudes Politiques de Lille",
-    "city" : "Lille, France",
+    "location" : "Lille France",
     "degree" : "Certificat d'Etudes Politiques",
     "major" : ["Political Science", "French Studies"],
-    "year" : "2004-2005",
+    "dates" : "2004-2005",
     "url" : "http://www.sciencespo-lille.eu/"
   }
 ],
-  "online-courses" : [
+  "onlineClasses" : [
     {
       "title" : "DataWrangling with MongoDB",
       "school" : "Udacity",
@@ -141,7 +151,7 @@ if ( bio.skills.length > 0 )
     }
 }
 
-function displayWork() {
+work.display = function() {
   for (job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -155,18 +165,6 @@ function displayWork() {
     $(".work-entry:last").append(formattedDescription);
     }
 }
-
-function inName(oldName) {
-    var finalName = oldName;
-    // Your code goes here!
-    var names = oldName.split(" ");
-
-    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
-    names[1] = names[1].toUpperCase();
-    finalName = names.join(" ");
-    // Don't delete this line!
-    return finalName;
-};
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -184,10 +182,76 @@ projects.display = function() {
   }
 };
 
-$("#main").append(internationalizeButton);
+education.display = function() {
+  for (school in education.schools) {
+    $("#education").append(HTMLschoolStart);
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+    $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    $(".education-entry:last").append(formattedSchoolDates);
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+    $(".education-entry:last").append(formattedSchoolLocation);
+    var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+    $(".education-entry:last").append(formattedSchoolMajor);
+  }
+  if (education.onlineClasses) {
+    $("#education").append(HTMLonlineClasses);
+    for (onlineClass in education.onlineClasses) {
+      $("#education").append(HTMLschoolStart);
+      var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
+      //if (typeof(education.onlineClasses[onlineClass].url) !== 'undefined') {
+      //$(formattedOnlineTitle).replace('#', education.onlineClasses[onlineClass].url);
+      //href.attr('href', education.onlineClasses[onlineClass].url);
+      //}
+      var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
+      $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+      var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates);
+      $(".education-entry:last").append(formattedOnlineDates);
+      var formattedOnlineURL= HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url);
+      $(".education-entry:last").append(formattedOnlineURL);
+    }
+  }
+}
 
-displayWork();
+function inName(oldName) {
+    var finalName = oldName;
+    // Your code goes here!
+    var names = oldName.split(" ");
+
+    names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
+    names[1] = names[1].toUpperCase();
+    finalName = names.join(" ");
+    // Don't delete this line!
+    return finalName;
+};
+
+//$("#main").append(internationalizeButton);
+
+work.display();
 
 projects.display();
 
+education.display();
+
 $("#mapDiv").append(googleMap);
+
+//add target="_blank" to every href
+// $(function() {
+//
+//   $('a').attr('href', 'http://www.susanne-fuelscher.de/');
+//
+// });
+// $("a[href='#']").each(function()
+//    {
+//       this.href = this.href.attr("#",
+//          "http://www.agiletournee.com");
+//    });
+
+
+//remove all empty href attributes
+$("a[href='#']").each(function()
+   {
+      this.removeAttribute("href");
+
+   });
