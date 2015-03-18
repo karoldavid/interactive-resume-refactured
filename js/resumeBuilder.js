@@ -16,7 +16,7 @@ var bio = {
 var work = {
   "jobs" : [
     {
-      "employer" : "agileTournee",
+      "employer" : "agileTournée",
       "title" : "Event Manager",
       "location" : "Berlin, Germany",
       "dates": "2011-2015",
@@ -45,11 +45,11 @@ var work = {
       "description" : "Conducted Interviews, wrote articles, planned four magazines"
     },
     {
-      "employe" : "Doc en Stock",
-      "title" : "Journalist stagiare",
+      "employer" : "Doc en Stock",
+      "title" : "Journaliste stagiare",
       "location" : "Paris, France",
       "dates" : "2005",
-      "description" : "Casted and invited guests for TV debates, researched and wrote treatments for pitching sessions" ,
+      "description" : "Casted and invited guests for TV debates, researched and wrote treatments for documentary films" ,
       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
     },
   ]
@@ -58,21 +58,21 @@ var work = {
 var projects = {
    "projects": [
      {
-       "title" : "Responsive Website",
+       "title" : "Responsive Website for an author and TV script writer",
        "dates" : "2015",
        "description" : "http://www.susanne-fuelscher.de/" ,
        "images" : ["images/susanne-fuelscher_small.jpg"]
    },
    {
-      "title" : "PR Event",
+      "title" : "PR Event for IFA (International Consumer Electronics)",
       "dates" : "2009",
-      "description" : "International Consumer Electronics (IFA)" ,
+      "description" : "Organized and coordinated event, planned and wrote parcours, invited media" ,
       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
    },
    {
       "title" : "Nouvelle PAC de L'UE",
       "dates" : "2004",
-      "description" : "Bourse de la Fondation Robert Bosch pour au sein de la CFPJ de Paris",
+      "description" : "Bourse de la Fondation Robert Bosch pour un stage au sein de la CFPJ de Paris",
       "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
    },
    {
@@ -90,7 +90,7 @@ var education = {
     "name" : "University Bremen",
     "location" : "Bremen Germany",
     "degree" : "Master in Political Science",
-    "major" : ["Political Science", "French Studies"],
+    "major" : ["Political Science"],
     "dates" : "2001-2007",
     "url" : "http://www.uni-bremen.de/"
   },
@@ -105,7 +105,19 @@ var education = {
 ],
   "onlineClasses" : [
     {
+      "title" : "Nano Degree Front End Web Developer",
+      "school" : "Udacity",
+      "dates" : "2015",
+      "url" : "https://www.udacity.com/course/ud032"
+    },
+    {
       "title" : "DataWrangling with MongoDB",
+      "school" : "Udacity",
+      "dates" : "2014",
+      "url" : "https://www.udacity.com/course/ud032"
+    },
+    {
+      "title" : "Sales Force App Development",
       "school" : "Udacity",
       "dates" : "2014",
       "url" : "https://www.udacity.com/course/ud032"
@@ -255,3 +267,13 @@ $("a[href='#']").each(function()
       this.removeAttribute("href");
 
    });
+
+$(".contact").hover(function()
+   {
+       $(this).css('background', 'red');
+       $(this).css('cursor', 'pointer');
+   },
+   function()
+   {
+       $(this).css('background', '#4A525A')
+  });

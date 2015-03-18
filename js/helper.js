@@ -13,15 +13,15 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
-var HTMLheaderRole = '<span>%data%</span><hr/>';
+var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item"><span class="orange-text zocial-call"></span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="orange-text zocial-email""></span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="orange-text zocial-twitter"></span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="orange-text zocial-github"></span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLcontactGeneric = '<li class="flex-item contact"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLmobile = '<li class="flex-item contact"><span class="orange-text zocial-call"></span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item contact"><span class="orange-text zocial-email""></span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item contact"><span class="orange-text zocial-twitter"></span><span class="white-text">%data%</span></li>';
+var HTMLgithub = '<li class="flex-item contact"><span class="orange-text zocial-github"></span><span class="white-text">%data%</span></li>';
+var HTMLblog = '<li class="flex-item contact"><span class="orange-text">blog</span><span class="white-text">%data%</span></li>';
+var HTMLlocation = '<li class="flex-item contact"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
