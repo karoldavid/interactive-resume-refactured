@@ -8,9 +8,9 @@ var bio = {
     "twitter" : "@karoldawid",
     "location" : "Berlin, Germany"
   },
-  "welcomeMsg": "Hi there!",
+  "welcomeMsg": "Once the genie is out of the bottle...",
   "bioPic" : "images/karol.png",
-  "skills": ["Mobile Development","Responsive Websites","Python","JavaScript","PHP", "Wordpress"]
+  "skills": ["Responsive Websites","Mobile Development", "Wordpress", "Python","JavaScript","PHP"]
 };
 
 var work = {

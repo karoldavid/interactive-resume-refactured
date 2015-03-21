@@ -10,7 +10,7 @@
   margin:0;
   /*font-family: 'Lato', sans-serif;*/
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  /*font-size: 16px;*/
 }
 
 body {
@@ -31,7 +31,7 @@ body {
 
 h1 {
   font-size: 40px;
-  color: #eee; /*#F5A623;*/
+  color: #F5A623; /*#eee;*/
   line-height: 48px;
   display: inline;
 }
@@ -103,21 +103,22 @@ a {
 }
 
 #skillsH3 {
-  color: #eee; /*#F5AE23;*/
+  color: #F5AE23;
   display: none;
 }
 
 .orange {
-  background-color: #d3d3d3 /*#F5AE23;*/
+  background-color: #d3d3d3; /*#F5AE23;*/
 }
 
 .orange-text {
-  color: #eee; /*#F5AE23;*/
+  color: #F5AE23; /*#eee*/
 }
 
 .white-text {
   font-weight: bold;
   color: #eee; /*color: #FFFFFF;*/
+
 }
 
 .gray {
@@ -247,12 +248,32 @@ span {
   }
 }
 
+@media only screen and (max-width: 1000px) {
+  .twitter,
+  .git {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .location {
+    display: none;
+  }
+}
+
+
 @media only screen and (max-width: 500px) {
   h1#name {
     font-size: 25px;
     line-height: 30px;
   }
   #role {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #topContacts {
     font-size: 12px;
   }
 }
