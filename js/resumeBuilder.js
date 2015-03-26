@@ -145,9 +145,6 @@ var education = {
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(formattedBioPic);
 
-var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedWelcomeMsg);
-
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 
@@ -162,6 +159,9 @@ if ( bio.skills.length > 0 )
     $("#skills").append(formattedSkill);
     }
 }
+
+var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
+$("#header").append(formattedWelcomeMsg);
 
 work.display = function() {
   for (job in work.jobs) {
