@@ -130,17 +130,17 @@ var education = {
     }
 ]
 };
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGithub);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
+//
+// var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+// $("#topContacts").append(formattedMobile);
+// var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+// $("#topContacts").append(formattedEmail);
+// var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
+// $("#topContacts").append(formattedGithub);
+// var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+// $("#topContacts").append(formattedTwitter);
+// var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+// $("#topContacts").append(formattedLocation);
 
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#header").append(formattedBioPic);
@@ -176,7 +176,7 @@ work.display = function() {
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
     }
-}
+};
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -224,7 +224,18 @@ education.display = function() {
       $(".education-entry:last").append(formattedOnlineURL);
     }
   }
-}
+};
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#footerContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#footerContacts").append(formattedEmail);
+var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
+$("#footerContacts").append(formattedGithub);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#footerContacts").append(formattedTwitter);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#footerContacts").append(formattedLocation);
 
 function inName(oldName) {
     var finalName = oldName;

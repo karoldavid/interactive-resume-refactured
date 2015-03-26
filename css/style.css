@@ -19,6 +19,10 @@ body {
   /*color: #eee;*/
 }
 
+.header__menu {
+  display: none;
+}
+
 .clearfix {
   overflow: auto;
 }
@@ -29,12 +33,20 @@ body {
   /*border: 1px solid #ddd;*/
 }
 
+hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid #D3D3D3;
+    margin: 1em 0; padding: 0; }
+
 h1 {
   font-size: 40px;
-  color: #F5A623; /*#eee;*/
+  font-weight: bold;
+  color: #fff; /*#F5A623; #eee;*/
   line-height: 48px;
   display: inline;
+  text-transform: uppercase;
 }
+
+
 
 h2 {
   font-weight: bold;
@@ -133,7 +145,8 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #4A525A; /*#484848;*/
+  /*background-color: #4A525A; #484848;*/
+  background-color: #252525; /*#666; #898989;*/
 
 }
 
@@ -166,10 +179,16 @@ ul {
   list-style-type: none;
 }
 
+#role {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+}
+
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 400px;
   display: none;
 }
 
@@ -193,6 +212,43 @@ img {
 span {
   padding: 5px;
 }
+
+.nav {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+  line-height: 24px;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+.nav a {
+  text-decoration: none;
+  /*color: #616161;*/
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5em 1.5em;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+  /*color: #212121;*/
+  color:
+}
+
 
 #letsConnect {
   text-align: center;
@@ -238,6 +294,49 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+}
+
+@media screen and (max-width: 549px) {
+  .header__logo {
+    height: 48px;
+    margin-right: 0.5em;
+  }
+  .header__title {
+    margin-left: 0;
+    font-size: 2em;
+    vertical-align: bottom;
+  }
+  .nav {
+    z-index: 10;
+    background-color: #000;
+    width: 300px;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+    text-align: left;
+  }
+  .header__menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  .header__menu svg {
+    width: 32px;
+    fill: #E0E0E0;
+  }
 }
 
 
