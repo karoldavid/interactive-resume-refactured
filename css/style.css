@@ -13,10 +13,20 @@
   /*font-size: 16px;*/
 }
 
-.color-collection {
+
+.blue {
   color: #176bec;
+}
+
+.red {
   color: #d8432e;
+}
+
+.yellow {
   color: #ffb500;
+}
+
+.green {
   color: #009451;
 }
 
@@ -41,7 +51,7 @@ body {
 }
 
 hr { display: block; height: 1px;
-    border: 0; border-top: 1px solid #D3D3D3;
+    border: 0; border-top: 1px solid #176bec;
     margin: 1em 0; padding: 0; }
 
 h1 {
@@ -51,6 +61,10 @@ h1 {
   line-height: 48px;
   display: inline;
   text-transform: uppercase;
+}
+
+h1:hover {
+  color: #176bec;
 }
 
 
@@ -131,8 +145,8 @@ a {
   background-color: #d3d3d3; /*#F5AE23;*/
 }
 
-.orange-text {
-  color: #F5AE23; /*#eee*/
+.blue-text {
+  color: #176bec; /*#F5AE23; #eee*/
 }
 
 .white-text {
@@ -186,6 +200,11 @@ a {
 
 ul {
   list-style-type: none;
+}
+
+li .white-text:hover {
+   cursor: pointer;
+   text-decoration: underline;
 }
 
 #role {
@@ -246,16 +265,15 @@ span {
 
 .nav a {
   text-decoration: none;
-  /*color: #616161;*/
   color: #fff;
   font-weight: bold;
-  padding: 0.5em 1.5em;
+  padding: 0.5em auto;
 }
 
 .nav a:hover {
-  text-decoration: underline;
-  /*color: #212121;*/
-  color:
+  text-decoration: none;
+  /*background-color: #d8432e;*/
+  color: #176bec;
 }
 
 
@@ -332,7 +350,7 @@ span {
   }
   .nav__item {
     display: list-item;
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid #176bec;
     width: 100%;
     text-align: left;
   }

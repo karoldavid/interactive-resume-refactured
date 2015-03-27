@@ -279,12 +279,22 @@ $("a[href='#']").each(function()
 
    });
 
-$(".contact").hover(function()
-   {
-       $(this).css('background', 'red');
-       $(this).css('cursor', 'pointer');
-   },
-   function()
-   {
-       $(this).css('background', '#4A525A')
-  });
+  $(".nav__item").hover(function()
+      {
+          $(this).css('background', '#d8432e');
+          $(this).css('cursor', 'pointer');
+      },
+      function()
+      {
+          $(this).css('background', '#252525')
+     });
+
+// $(".contact").hover(function()
+//    {
+//       $(this).css('cursor', 'pointer');
+//       $(this).css('textDecoration', 'underline');
+//    },
+//    function()
+//    {
+//      $(this).css('textDecoration', 'none');
+//   });
