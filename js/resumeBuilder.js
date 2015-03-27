@@ -2,7 +2,7 @@ var bio = {
   "name" : "Karol Zyskowski",
   "role": "Web Developer",
   "contacts" : {
-    "mobile" : "+49 179 780 966 4",
+    "phone" : "+49 30 301 393 71",
     "email" : "k.zysk@zoho.com",
     "github" : "@karoldavid",
     "twitter" : "@karoldawid",
@@ -10,7 +10,7 @@ var bio = {
   },
   "welcomeMsg": "Once the genie is out of the bottle...",
   "bioPic" : "images/karol.png",
-  "skills": ["Responsive Websites","Mobile Development", "Wordpress", "Python","JavaScript","PHP"]
+  "skills": ["Responsive Websites","phone Development", "Wordpress", "Python","JavaScript","PHP"]
 };
 
 var work = {
@@ -131,8 +131,8 @@ var education = {
 ]
 };
 //
-// var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-// $("#topContacts").append(formattedMobile);
+// var formattedphone = HTMLphone.replace("%data%", bio.contacts.phone);
+// $("#topContacts").append(formattedphone);
 // var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 // $("#topContacts").append(formattedEmail);
 // var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
@@ -226,8 +226,8 @@ education.display = function() {
   }
 };
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#footerContacts").append(formattedMobile);
+var formattedphone = HTMLphone.replace("%data%", bio.contacts.phone);
+$("#footerContacts").append(formattedphone);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#footerContacts").append(formattedEmail);
 var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
@@ -260,24 +260,20 @@ education.display();
 $("#mapDiv").append(googleMap);
 
 //add target="_blank" to every href
-// $(function() {
+
+
+//remove all empty href attributes
+// $("a[href='#']").each(function()
+//    {
+//       this.removeAttribute("href");
 //
-//   $('a').attr('href', 'http://www.susanne-fuelscher.de/');
-//
-// });
+//    });
+
 // $("a[href='#']").each(function()
 //    {
 //       this.href = this.href.attr("#",
 //          "http://www.agiletournee.com");
 //    });
-
-
-//remove all empty href attributes
-$("a[href='#']").each(function()
-   {
-      this.removeAttribute("href");
-
-   });
 
   $(".nav__item").hover(function()
       {
@@ -289,12 +285,6 @@ $("a[href='#']").each(function()
           $(this).css('background', '#252525')
      });
 
-// $(".contact").hover(function()
-//    {
-//       $(this).css('cursor', 'pointer');
-//       $(this).css('textDecoration', 'underline');
-//    },
-//    function()
-//    {
-//      $(this).css('textDecoration', 'none');
-//   });
+$('#footerContacts a').each(function() {
+  $(this).attr('href', 'https://github.com/karoldavid?tab=repositories');
+});

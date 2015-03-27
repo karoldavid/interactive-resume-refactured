@@ -16,12 +16,12 @@ var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
 
 var HTMLcontactGeneric = '<li class="flex-item contact"><span class="blue-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLmobile = '<li class="flex-item contact mobile"><span class="blue-text zocial-call"></span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item contact email"><span class="blue-text zocial-email""></span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item contact twitter"><span class="blue-text zocial-twitter"></span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item contact git"><span class="blue-text zocial-github"></span><span class="white-text">%data%</span></li>';
-var HTMLblog = '<li class="flex-item contact blog"><span class="blue-text">blog</span><span class="white-text">%data%</span></li>';
-var HTMLlocation = '<li class="flex-item contact location"><span class="blue-text">location</span><span class="white-text">%data%</span></li>';
+var HTMLphone = '<li class="flex-item contact phone"><a href="#" target"_blank"><span class="blue-text zocial-call"></span><span class="white-text">%data%</span></a></li>';
+var HTMLemail = '<li class="flex-item contact email"><a href="#" target"_blank"><span class="blue-text zocial-email""></span><span class="white-text">%data%</span></a></li>';
+var HTMLtwitter = '<li class="flex-item contact twitter"><a href="#" target"_blank"><span class="blue-text zocial-twitter"></span><span class="white-text">%data%</span></a></li>';
+var HTMLgithub = '<li class="flex-item contact git"><a href="#" target"_blank"><span class="blue-text zocial-github"></span><span class="white-text">%data%</span></a></li>';
+var HTMLblog = '<li class="flex-item contact blog"><a href="#" target"_blank"><span class="blue-text">blog</span><span class="white-text">%data%</span></a></li>';
+var HTMLlocation = '<li class="flex-item contact location"><a><span class="blue-text">location</span><span class="white-text">%data%</span></a></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
