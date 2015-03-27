@@ -275,15 +275,48 @@ $("#mapDiv").append(googleMap);
 //          "http://www.agiletournee.com");
 //    });
 
-  $(".nav__item").hover(function()
-      {
-          $(this).css('background', '#d8432e');
-          $(this).css('cursor', 'pointer');
-      },
-      function()
-      {
-          $(this).css('background', '#252525')
-     });
+  // $(".nav__item").hover(function()
+  //     {
+  //         $(this).css('background', '#d8432e');
+  //         $(this).css('cursor', 'pointer');
+  //     },
+  //     function()
+  //     {
+  //         $(this).css('background', '#252525')
+  //    });
+
+  // $(".nav__item").hover(function()
+  //     {
+  //         $(this).css('background', '#d8432e');
+  //         $(this).css('cursor', 'pointer');
+  //     },
+  //     function()
+  //     {
+  //         $(this).css('background', '#252525')
+  //    });
+
+
+  $("#drawer li").hover(function() {
+    var current = $(this).text();
+    if (current === "Work Experience") {
+      $(this).css('background', '#176bec');
+    }
+    if (current === "Projects") {
+      $(this).css('background', '#d8432e');
+    }
+    if (current === "Education") {
+      $(this).css('background', '#ffb500');
+    }
+    if (current === "Locations") {
+      $(this).css('background', '#009451');
+    }
+  },
+    function()
+         {
+            $(this).css('background', '#252525')
+
+  });
+
 
 $('#footerContacts a').each(function() {
   $(this).attr('href', 'https://github.com/karoldavid?tab=repositories');
