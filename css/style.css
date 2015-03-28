@@ -1,7 +1,7 @@
 /* zocial */
 [class*="zocial-"]:before {
   font-family: 'zocial', sans-serif;
-  text-shadow: 3px 3px 3px #aaa;
+  /*text-shadow: 3px 3px 3px #aaa;*/
   width: 20vw;
 }
 
@@ -30,6 +30,14 @@
   color: #009451;
 }
 
+.lightblue-text{
+  color: #55acee;
+}
+
+.lightblue {
+  background-color: #55acee;
+}
+
 body {
   background-color: #eee;
   font-size: 16px;
@@ -49,6 +57,10 @@ body {
 #education,
 #mapDiv {
   display: none;
+}
+
+.active {
+    color: green;
 }
 
 .education-entry, .work-entry, .project-entry {
@@ -79,7 +91,8 @@ h1:hover {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  /*color: #999999;*/
+  color: #000;
   line-height: 29px;
   padding: 10px;
 }
@@ -148,8 +161,8 @@ a {
   display: none;
 }
 
-.orange {
-  background-color: #d3d3d3; /*#F5AE23;*/
+. {
+  background-color: #55acee; /*#d3d3d3; #F5AE23;*/
 }
 
 .blue-text {
@@ -162,6 +175,11 @@ a {
 
 }
 
+.gray-text {
+  font-weight: bold;
+  color: #848484;
+}
+
 .gray {
   background-color: #d3d3d3; /*#444; #F3F3F3;*/
   padding-bottom: 10px;
@@ -169,7 +187,7 @@ a {
 }
 
 .dark-gray {
-  background-color: #4A525A; /*#4A4A4A;*/
+  background-color: #090909; /*#4A525A; #4A4A4A;*/
 }
 
 /* TODO: Replace with image later */
@@ -209,9 +227,14 @@ ul {
   list-style-type: none;
 }
 
-#footerContacts li .white-text:hover {
+#footerContacts a .gray-text:hover {
    cursor: pointer;
    text-decoration: underline;
+   color: #fff;
+}
+
+#footerContacts li .gray-text:hover {
+   color: #fff;
 }
 
 #role {

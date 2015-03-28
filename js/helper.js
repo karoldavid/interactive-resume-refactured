@@ -15,13 +15,13 @@ replace the %data% placeholder text you see in them.
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
 var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
 
-var HTMLcontactGeneric = '<li class="flex-item contact"><span class="blue-text">%contact%</span><span class="white-text">%data%</span></li>';
-var HTMLphone = '<li class="flex-item contact phone"><a href="#" target"_blank"><span class="blue-text zocial-call"></span><span class="white-text">%data%</span></a></li>';
-var HTMLemail = '<li class="flex-item contact email"><a href="#" target"_blank"><span class="blue-text zocial-email""></span><span class="white-text">%data%</span></a></li>';
-var HTMLtwitter = '<li class="flex-item contact twitter"><a href="#" target"_blank"><span class="blue-text zocial-twitter"></span><span class="white-text">%data%</span></a></li>';
-var HTMLgithub = '<li class="flex-item contact git"><a href="#" target"_blank"><span class="blue-text zocial-github"></span><span class="white-text">%data%</span></a></li>';
-var HTMLblog = '<li class="flex-item contact blog"><a href="#" target"_blank"><span class="blue-text">blog</span><span class="white-text">%data%</span></a></li>';
-var HTMLlocation = '<li class="flex-item contact location"><a><span class="blue-text">location</span><span class="white-text">%data%</span></a></li>';
+var HTMLcontactGeneric = '<li class="flex-item contact"><span class="gray-text">%contact%</span><span class="white-text">%data%</span></li>';
+var HTMLphone = '<li class="flex-item contact" id="phone"><span class="zocial-call lightblue-text"></span><span class="gray-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item contact" id="email"><a href="#" target="_blank"><span class="zocial-email lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLtwitter = '<li class="flex-item contact" id="twitter"><a href="#" target="_blank"><span class="zocial-twitter lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLgithub = '<li class="flex-item contact" id="github"><a href="#" target="_blank"><span class="zocial-github lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLblog = '<li class="flex-item contact" id="blog"><a href="#" target="_blank"><span class="zocial-blog lightblue-text">blog</span><span class="gray-text">%data%</span></a></li>';
+var HTMLlocation = '<li class="flex-item contact" id="location"><span class="gray-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';

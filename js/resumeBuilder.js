@@ -28,7 +28,7 @@ var work = {
       "title" : "Legal Removals Specialist",
       "location" : "Dublin, Ireland",
       "dates": "2014",
-      "description" : "The Right to be forgotten project"
+      "description" : "The right to be forgotten project"
     },
     {
       "employer" : "Constanza Macras | DorkyPark GmbH",
@@ -261,41 +261,6 @@ $("#mapDiv").append(googleMap);
 
 //add target="_blank" to every href
 
-
-//remove all empty href attributes
-// $("a[href='#']").each(function()
-//    {
-//       this.removeAttribute("href");
-//
-//    });
-
-// $("a[href='#']").each(function()
-//    {
-//       this.href = this.href.attr("#",
-//          "http://www.agiletournee.com");
-//    });
-
-  // $(".nav__item").hover(function()
-  //     {
-  //         $(this).css('background', '#d8432e');
-  //         $(this).css('cursor', 'pointer');
-  //     },
-  //     function()
-  //     {
-  //         $(this).css('background', '#252525')
-  //    });
-
-  // $(".nav__item").hover(function()
-  //     {
-  //         $(this).css('background', '#d8432e');
-  //         $(this).css('cursor', 'pointer');
-  //     },
-  //     function()
-  //     {
-  //         $(this).css('background', '#252525')
-  //    });
-
-
   // main nav with different colors on hover
   $("#drawer li").hover(function() {
     var colors = ["#176bec", "#d8432e","#ffb500", "#009451"];
@@ -322,6 +287,18 @@ $("#mapDiv").append(googleMap);
   });
 
 
-$('#footerContacts a').each(function() {
-  $(this).attr('href', 'https://github.com/karoldavid?tab=repositories');
+$('#footerContacts li').each(function() {
+  var url = {"email" : "mailto:" + bio.contacts.email, "github" : "https://github.com/karoldavid?tab=repositories", "twitter" : "https://twitter.com/karoldawid"};
+  var a = $(this).find('a');
+  var social = this.id;
+  // console.log(social);
+  // console.log(a);
+  a.attr('href', url[social]);
 });
+
+//remove all empty href attributes
+$("a[href='#']").each(function()
+   {
+      this.removeAttribute("href");
+
+   });
