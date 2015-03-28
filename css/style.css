@@ -44,6 +44,13 @@ body {
   overflow: auto;
 }
 
+#workExperience,
+#projects,
+#education,i
+#mapDiv {
+  display: none;
+}
+
 .education-entry, .work-entry, .project-entry {
   padding-left: 5%;
   padding-right: 5%;
@@ -202,7 +209,7 @@ ul {
   list-style-type: none;
 }
 
-li .white-text:hover {
+#footerContacts li .white-text:hover {
    cursor: pointer;
    text-decoration: underline;
 }
@@ -216,7 +223,7 @@ li .white-text:hover {
 .biopic {
   float: left;
   padding: 10px;
-  width: 400px;
+  width: 200px;
   display: none;
 }
 
@@ -261,6 +268,15 @@ span {
   line-height: 24px;
   padding: 12px;
   text-transform: uppercase;
+}
+
+.nav li {
+  color: #fff;
+}
+
+.nav li:hover {
+  text-decoration: none;
+  color: #000;
 }
 
 .nav a {

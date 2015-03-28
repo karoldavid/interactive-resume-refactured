@@ -89,11 +89,17 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         </svg>
       </a>
       <nav id="drawer" class="nav">
-        <ul class="nav__list">
+        <!-- <ul class="nav__list">
           <li class="nav__item"><a href="#workExperience">Work Experience</a></li>
           <li class="nav__item"><a href="#projects">Projects</a></li>
-          <li class="nav__item"><a href="#education">Education</a></li>
+          <li class="nav__item" id="3"><a href="#education">Education</a></li>
           <li class="nav__item"><a href="#mapDiv">Locations</a></li>
+        </ul> -->
+        <ul class="nav__list">
+          <li class="nav__item" id="1">Work Experience</li>
+          <li class="nav__item" id="2">Projects</li>
+          <li class="nav__item" id="3">Education</li>
+          <li class="nav__item" id="4">Locations</li>
         </ul>
       </nav>
 
@@ -154,6 +160,24 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
         an opening and closing set of slash asterisks for block comments.
     */
 
+    $("#1").click(function(){
+        $("#workExperience").toggle(1000);
+    });
+
+
+    $("#2").click(function(){
+        $("#projects").toggle(1000);
+    });
+
+
+    $("#3").click(function(){
+        $("#education").toggle(1000);
+    });
+
+    $("#4").click(function(){
+        $("#mapDiv").toggle(1000);
+    });
+
 
     if(document.getElementsByClassName('flex-item').length === 0) {
       document.getElementById('topContacts').style.display = 'none';
@@ -176,6 +200,16 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
     if(document.getElementById('map') === null) {
       document.getElementById('mapDiv').style.display = 'none';
     }
+
+
+
+    // $( "#3" ).click(function() {
+    // $( "#education" ).show();
+    // });
+    //
+    // $( "#3" ).click(function() {
+    //     $( "#education" ).hide( 1000 );
+    // });
       /*
        * Open the drawer when the menu ison is clicked.
        */

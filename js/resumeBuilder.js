@@ -10,7 +10,7 @@ var bio = {
   },
   "welcomeMsg": "Once the genie is out of the bottle...",
   "bioPic" : "images/karol.png",
-  "skills": ["Responsive Websites","phone Development", "Wordpress", "Python","JavaScript","PHP"]
+  "skills": ["Responsive Websites","Mobile Development", "Wordpress", "Python","JavaScript","PHP"]
 };
 
 var work = {
@@ -296,24 +296,16 @@ $("#mapDiv").append(googleMap);
   //    });
 
 
+  // main nav with different colors
   $("#drawer li").hover(function() {
+    var colors = { "Work Experience" : "#176bec", "Projects" : "#d8432e", "Education" : "#ffb500", "Locations" : "#009451"};
     var current = $(this).text();
-    if (current === "Work Experience") {
-      $(this).css('background', '#176bec');
-    }
-    if (current === "Projects") {
-      $(this).css('background', '#d8432e');
-    }
-    if (current === "Education") {
-      $(this).css('background', '#ffb500');
-    }
-    if (current === "Locations") {
-      $(this).css('background', '#009451');
-    }
+    $(this).css('background', colors[current]);
+    $(this).css('cursor', 'pointer');
   },
     function()
          {
-            $(this).css('background', '#252525')
+            $(this).css('background', '#252525');
 
   });
 
