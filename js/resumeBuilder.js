@@ -296,17 +296,29 @@ $("#mapDiv").append(googleMap);
   //    });
 
 
-  // main nav with different colors
+  // main nav with different colors on hover
   $("#drawer li").hover(function() {
-    var colors = { "Work Experience" : "#176bec", "Projects" : "#d8432e", "Education" : "#ffb500", "Locations" : "#009451"};
-    var current = $(this).text();
-    $(this).css('background', colors[current]);
+    var colors = ["#176bec", "#d8432e","#ffb500", "#009451"];
+    var current = this.id;
+    $(this).css('background', colors[current - 1]);
     $(this).css('cursor', 'pointer');
   },
     function()
          {
             $(this).css('background', '#252525');
 
+  });
+
+  // main nav sections fade in/ out on click
+  $("#drawer li").click(function() {
+    var nav__items = ["#workExperience", "#projects", "#education", "#mapDiv"];
+    var current = this.id - 1;
+    for (i = 0; i < nav__items.length; i++) {
+      if (i != current) {
+        $(nav__items[i]).hide(1000);
+      }
+    }
+    $(nav__items[current]).toggle(1000);
   });
 
 
