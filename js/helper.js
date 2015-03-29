@@ -17,7 +17,7 @@ var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
 
 var HTMLcontactGeneric = '<li class="flex-item contact"><span class="gray-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLphone = '<li class="flex-item contact" id="phone"><span class="zocial-call lightblue-text"></span><span class="gray-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item contact" id="email"><a href="#" target="_blank"><span class="zocial-email lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLemail = '<li class="flex-item contact" id="email"><a href="#" target="_self"><span class="zocial-email lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
 var HTMLtwitter = '<li class="flex-item contact" id="twitter"><a href="#" target="_blank"><span class="zocial-twitter lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
 var HTMLgithub = '<li class="flex-item contact" id="github"><a href="#" target="_blank"><span class="zocial-github lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
 var HTMLblog = '<li class="flex-item contact" id="blog"><a href="#" target="_blank"><span class="zocial-blog lightblue-text">blog</span><span class="gray-text">%data%</span></a></li>';
@@ -40,7 +40,7 @@ var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
 var HTMLprojectDates = '<div class="date-text">%data%</div>';
 var HTMLprojectDescription = '<p><br>%data%</p>';
-var HTMLprojectImage = '<img src="%data%">';
+var HTMLprojectImage = '<img src="%data%" width="200">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';

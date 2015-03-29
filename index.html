@@ -96,12 +96,14 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
           <li class="nav__item"><a href="#mapDiv">Locations</a></li>
         </ul> -->
         <ul class="nav__list">
-          <li class="nav__item" id="1">Work Experience</li>
-          <li class="nav__item" id="2">Projects</li>
-          <li class="nav__item" id="3">Education</li>
-          <li class="nav__item" id="4">Locations</li>
+          <li class="nav__item">Work Experience</li>
+          <li class="nav__item">Projects</li>
+          <li class="nav__item">Education</li>
+          <li class="nav__item">Locations</li>
         </ul>
       </nav>
+
+      <div id="info"></div>
 
       <!-- <ul id="topContacts" class='flex-row'></ul> -->
 
@@ -109,19 +111,19 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
    <main>
     <div style='clear: both;'></div>
-    <div id="workExperience" class='gray'>
+    <div id="workExperience" class="section gray">
       <h2>Work Experience</h2>
     </div>
-    <div id="projects">
+    <div id="projects" class="section light">
       <h2>Projects</h2>
     </div>
-    <div id="education" class='gray'>
+    <div id="education" class="section gray">
       <h2>Education</h2>
     </div>
-    <div id="mapDiv">
+    <div id="mapDiv" class="section light">
       <h2>Where I've Lived, Travelled and Worked</h2>
     </div>
-    <div id="letsConnect" class='dark-gray'>
+    <div id="letsConnect" class="dark-gray">
       <h2 class='lightblue center-text'>Let's Connect</h2>
 
         <ul id="footerContacts" class="flex-row">
@@ -181,8 +183,13 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
       document.getElementById('letsConnect').style.display = 'none';
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+      document.getElementById('mapDiv').style.backgroundColor  = '#000';
     }
+
+    // hide all sections
+    $('main .section').each( function(i,e) {
+       $('#' + e.id).hide();
+   });
 
       /*
        * Open the drawer when the menu ison is clicked.

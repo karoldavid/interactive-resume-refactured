@@ -58,6 +58,12 @@ var work = {
 var projects = {
    "projects": [
      {
+        "title" : "Polish Movie Poster Gallery with posters from 1955 to 1989",
+        "dates" : "2015",
+        "description" : "http://karoldavid.github.io/movie-poster-blog/",
+        "images" : ["images/dziecko_rosemary.svg", "images/zabity_na_smierc.svg", "images/w_mroku_nocy.svg"]
+     },
+     {
        "title" : "Responsive Website for an author and TV script writer",
        "dates" : "2015",
        "description" : "http://www.susanne-fuelscher.de/" ,
@@ -101,6 +107,14 @@ var education = {
     "major" : ["Political Science", "French Studies"],
     "dates" : "2004-2005",
     "url" : "http://www.sciencespo-lille.eu/"
+  },
+  {
+    "name" : "English Language School",
+    "location" : "Auckland New Zealand",
+    "degree" : "Certificate",
+    "major" : [],
+    "dates" : "2005",
+    "url" : "#"
   }
 ],
   "onlineClasses" : [
@@ -143,7 +157,7 @@ var education = {
 // $("#topContacts").append(formattedLocation);
 
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$("#header").append(formattedBioPic);
+$("#info").append(formattedBioPic);
 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
@@ -153,7 +167,7 @@ $("#header").prepend(formattedName);
 
 if ( bio.skills.length > 0 )
 {
-  $("#header").append(HTMLskillsStart);
+  $("#info").append(HTMLskillsStart);
   for (skill in bio.skills) {
     var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
     $("#skills").append(formattedSkill);
@@ -161,7 +175,7 @@ if ( bio.skills.length > 0 )
 }
 
 var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
-$("#header").append(formattedWelcomeMsg);
+$("#info").append(formattedWelcomeMsg);
 
 work.display = function() {
   for (job in work.jobs) {
@@ -261,38 +275,52 @@ $("#mapDiv").append(googleMap);
 
 //add target="_blank" to every href
 
-  // main nav with different colors on hover
-  $("#drawer li").hover(function() {
-    var colors = ["#176bec", "#d8432e","#ffb500", "#009451"];
-    var current = this.id;
-    $(this).css('background', colors[current - 1]);
-    $(this).css('cursor', 'pointer');
+// main nav with different colors on hover
+$('#drawer li').hover(function (event) {
+  var colors = ["#176bec", "#d8432e","#ffb500", "#009451"];
+  var current = $(this).index();// get index in collection of the clicked item
+  $(this).css('background', colors[current]);
+  $(this).css('transition', '250ms ease-in');
+  $(this).css('cursor', 'pointer');
   },
-    function()
-         {
-            $(this).css('background', '#252525');
+  function() {
+    $(this).css('background', '#252525');
+    $(this).css('transition', '250ms ease-out');
+});
 
-  });
+  //main nav sections fade in/ out on click
+  $("#drawer li").click(function (event) {
+    var nav__items = [];
+    $('main .section').each( function(i,e) {
+     nav__items.push(e.id);
+   });
 
-  // main nav sections fade in/ out on click
-  $("#drawer li").click(function() {
-    var nav__items = ["#workExperience", "#projects", "#education", "#mapDiv"];
-    var current = this.id - 1;
-    for (i = 0; i < nav__items.length; i++) {
-      if (i != current) {
-        $(nav__items[i]).hide(1000);
+    var current = nav__items[$(this).index()];
+
+    for (item in nav__items) {
+      if (nav__items[item] != current) {
+        $('#' + nav__items[item]).hide(1000);
       }
+      $('#info').hide(1000);
     }
-    $(nav__items[current]).toggle(1000);
+    var info = document.getElementById(current);
+    if (info.style.display != 'none') {
+      $('#info').show(1000);
+    };
+
+    $('#' + current).toggle(1000);
+
   });
 
+  // if ($('nav__items[index]').is(':hidden')) {
+  //   $('#info').hide(1000);
+  // }
 
+//add url to footer contacts zocial
 $('#footerContacts li').each(function() {
   var url = {"email" : "mailto:" + bio.contacts.email, "github" : "https://github.com/karoldavid?tab=repositories", "twitter" : "https://twitter.com/karoldawid"};
   var a = $(this).find('a');
   var social = this.id;
-  // console.log(social);
-  // console.log(a);
   a.attr('href', url[social]);
 });
 

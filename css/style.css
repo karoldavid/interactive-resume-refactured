@@ -38,6 +38,10 @@
   background-color: #55acee;
 }
 
+.light {
+  background-color: #eee;
+}
+
 body {
   background-color: #eee;
   font-size: 16px;
@@ -52,12 +56,12 @@ body {
   overflow: auto;
 }
 
-#workExperience,
+/*#workExperience,
 #projects,
 #education,
 #mapDiv {
   display: none;
-}
+}*/
 
 .active {
     color: green;
