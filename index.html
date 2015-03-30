@@ -100,9 +100,12 @@
       document.getElementById('mapDiv').style.backgroundColor = '#000';
     }
 
-    // Hide all sections
+    // Hide all sections except google maps
     $('main .section').each( function(i,e) {
-       $('#' + e.id).hide();
+       var section = $('#' + e.id);
+       if (section.selector != '#mapDiv') {
+         section.hide();
+       }
     });
 
     // Open the drawer when the menu icon is clicked.
@@ -118,6 +121,8 @@
     main.addEventListener('click', function() {
       drawer.classList.remove('open');
     });
+
+
   </script>
 </body>
 </html>

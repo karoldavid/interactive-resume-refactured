@@ -32,6 +32,13 @@ body {
   border: 1px solid #ddd;
 }
 
+/*#workExperience,
+#projects,
+#education,
+#mapDiv {
+  display: none;
+}*/
+
 hr {
   display: block; height: 1px;
   border: 0; border-top: 1px solid #176bec;

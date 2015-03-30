@@ -206,7 +206,7 @@ work.display = function() {
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
     }
-};
+}
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -222,7 +222,7 @@ projects.display = function() {
       $(".project-entry:last").append(formattedImage);
     }
   }
-};
+}
 
 education.display = function() {
   for (school in education.schools) {
@@ -254,7 +254,7 @@ education.display = function() {
       $(".education-entry:last").append(formattedOnlineURL);
     }
   }
-};
+}
 
 var formattedphone = HTMLphone.replace("%data%", bio.contacts.phone);
 $("#footerContacts").append(formattedphone);
@@ -289,48 +289,43 @@ education.display();
 
 $("#mapDiv").append(googleMap);
 
-//add target="_blank" to every href
-
 // main nav with different colors on hover
 $('#drawer li').hover(function (event) {
-  var colors = ["#176bec", "#d8432e","#ffb500", "#009451"];
+  var colors = ["#176bec", "#d8432e","#ffb500", "#009451"]; // blue, red, yellow, and green
   var current = $(this).index();// get index in collection of the clicked item
   $(this).css('background', colors[current]);
   $(this).css('transition', '250ms ease-in');
   $(this).css('cursor', 'pointer');
   },
   function() {
-    $(this).css('background', '#252525');
+    $(this).css('background', '#252525'); // reset background color to initial color
     $(this).css('transition', '250ms ease-out');
 });
 
-  //main nav sections fade in/ out on click
+  // main nav sections fade in/ out on click
   $("#drawer li").click(function (event) {
-    var nav__items = [];
+    var navItems = [];
+    // build array with section ids
     $('main .section').each( function(i,e) {
-     nav__items.push(e.id);
+     navItems.push(e.id);
    });
 
-    var current = nav__items[$(this).index()];
+    var current = navItems[$(this).index()];
 
-    for (item in nav__items) {
-      if (nav__items[item] != current) {
-        $('#' + nav__items[item]).hide(1000);
+    for (item in navItems) {
+      if (navItems[item] != current) {
+        $('#' + navItems[item]).hide(1000);// make sure that all inactive sections are hidden
       }
-      $('#info').hide(1000);
+      $('#info').hide(1000);// hide bioPic and skills when one section is shown
     }
     var info = document.getElementById(current);
     if (info.style.display != 'none') {
-      $('#info').show(1000);
+      $('#info').show(1000);// show bioPic and skills when all sections are hidden
     };
 
-    $('#' + current).toggle(1000);
+    $('#' + current).toggle(1000);//show or hide clicked section
 
   });
-
-  // if ($('nav__items[index]').is(':hidden')) {
-  //   $('#info').hide(1000);
-  // }
 
 //add url to footer contacts zocial
 $('#footerContacts li').each(function() {
@@ -341,8 +336,6 @@ $('#footerContacts li').each(function() {
 });
 
 //remove all empty href attributes
-$("a[href='#']").each(function()
-   {
-      this.removeAttribute("href");
-
-   });
+$("a[href='#']").each(function() {
+  this.removeAttribute("href");
+});
