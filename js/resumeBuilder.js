@@ -16,6 +16,14 @@ var bio = {
 var work = {
   "jobs" : [
     {
+      "employer" : "Freelance",
+      "title" : "Web Developer",
+      "location" : "Berlin, Germany",
+      "dates": "2015",
+      "description" : "Responsive Websites",
+      "url" : "http://karoldavid.github.io/"
+    },
+    {
       "employer" : "agileTournée",
       "title" : "Event Manager",
       "location" : "Berlin, Germany",
@@ -43,6 +51,14 @@ var work = {
       "location" : "Warsaw, Poland",
       "dates": "2008-2009",
       "description" : "Conducted Interviews, wrote articles, planned four magazines"
+    },
+    {
+      "employer" : "Die Deutsche Kammerphilharmonie Bremen",
+      "title" : "Assistent Tourmanagement",
+      "location" : "Bremen, Germany",
+      "dates" : "2006-2008",
+      "description" : "Assisted preparing, organizing, and coordinating classical music concerts",
+      "images" : ["images/placeholder.jpg","images/placeholder.jpg","images/placeholder.jpg"]
     },
     {
       "employer" : "Doc en Stock",

@@ -1,7 +1,6 @@
 /* zocial */
 [class*="zocial-"]:before {
   font-family: 'zocial', sans-serif;
-  /*text-shadow: 3px 3px 3px #aaa;*/
   width: 20vw;
 }
 
@@ -10,9 +9,115 @@
   margin:0;
   /*font-family: 'Lato', sans-serif;*/
   font-family: 'Open Sans', sans-serif;
-  /*font-size: 16px;*/
 }
 
+body {
+  background-color: #eee;
+  font-size: 16px;
+}
+
+.header__menu {
+  display: none;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding-left: 5%;
+  padding-right: 5%;
+  border: 1px solid #ddd;
+}
+
+hr {
+  display: block; height: 1px;
+  border: 0; border-top: 1px solid #176bec;
+  margin: 1em 0; padding: 0;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 48px;
+  display: inline;
+  text-transform: uppercase;
+}
+
+h1:hover {
+  color: #176bec;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #000;
+  line-height: 29px;
+  padding: 10px;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 20px;
+  color: #000000;
+  line-height: 22px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  color: #4A4A4A;
+  line-height: 17px;
+}
+
+h2, h3, h4, h5 {
+  padding:10px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: right;
+}
+
+p {
+  font-size: 16px;
+  color: #333333;
+  line-height: 21px;
+}
+
+a {
+  color: #1199C3;
+  text-decoration: none;
+  display: block;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #F3F3F3;
+  line-height: 28px;
+}
+
+#skillsH3 {
+  color: #fff;
+  display: none;
+}
 
 .blue {
   color: #176bec;
@@ -41,141 +146,17 @@
 .light {
   background-color: #eee;
 }
-
-body {
-  background-color: #eee;
-  font-size: 16px;
-  /*color: #eee;*/
-}
-
-.header__menu {
-  display: none;
-}
-
-.clearfix {
-  overflow: auto;
-}
-
-/*#workExperience,
-#projects,
-#education,
-#mapDiv {
-  display: none;
-}*/
-
-.active {
-    color: green;
-}
-
-.education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
-  /*border: 1px solid #ddd;*/
-}
-
-hr { display: block; height: 1px;
-    border: 0; border-top: 1px solid #176bec;
-    margin: 1em 0; padding: 0; }
-
-h1 {
-  font-size: 40px;
-  font-weight: bold;
-  color: #fff; /*#F5A623; #eee;*/
-  line-height: 48px;
-  display: inline;
-  text-transform: uppercase;
-}
-
-h1:hover {
-  color: #176bec;
-}
-
-
-
-h2 {
-  font-weight: bold;
-  font-size: 24px;
-  /*color: #999999;*/
-  color: #000;
-  line-height: 29px;
-  padding: 10px;
-}
-
-h3 {
-  font-style: italic;
-  font-size: 20px;
-  color: #000000;
-  line-height: 22px;
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  color: #4A4A4A;
-  line-height: 17px;
-}
-
-h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: right;
-
-}
-
-p {
-  font-size: 16px;
-  color: #333333;
-  line-height: 21px;
-}
-
-a {
-  color: #1199C3;
-  text-decoration: none;
-  /*margin-top: 10px;*/
-  display: block;
-}
-
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #F3F3F3;
-  line-height: 28px;
-}
-
-#skillsH3 {
-  /*color: #F5AE23;*/
-  color: #fff;
-  display: none;
-}
-
 . {
-  background-color: #55acee; /*#d3d3d3; #F5AE23;*/
+  background-color: #55acee;
 }
 
 .blue-text {
-  color: #176bec; /*#F5AE23; #eee*/
+  color: #176bec;
 }
 
 .white-text {
   font-weight: bold;
-  color: #eee; /*color: #FFFFFF;*/
+  color: #eee;
 
 }
 
@@ -185,36 +166,25 @@ a {
 }
 
 .gray {
-  background-color: #d3d3d3; /*#444; #F3F3F3;*/
+  background-color: #d3d3d3;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
-  background-color: #090909; /*#4A525A; #4A4A4A;*/
+  background-color: #090909;
 }
 
-/* TODO: Replace with image later */
 #header {
-  /*background-color: #4A525A; #484848;*/
-  background-color: #252525; /*#666; #898989;*/
+  background-color: #252525;
   text-transform: uppercase;
-
 }
 
-.flex-row {
+/* flex-row for footer zocial icons*/
+.flex {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-.flex-column {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
@@ -409,7 +379,6 @@ span {
   }
 }
 
-
 @media only screen and (min-width: 750px) {
   #skillsH3,
   .biopic {
@@ -418,18 +387,26 @@ span {
 }
 
 @media only screen and (max-width: 1000px) {
-  .twitter,
-  .git {
-    display: none;
+  #twitter,
+  #github {
+    /*display: none;*/
   }
 }
 
 @media only screen and (max-width: 650px) {
-  .location {
-    display: none;
+  #location {
+    /*display: none;*/
+  }
+  /* flex-column for footer zocial icons*/
+  .flex {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
   }
 }
-
 
 @media only screen and (max-width: 500px) {
   h1#name {
