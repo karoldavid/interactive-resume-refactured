@@ -176,10 +176,10 @@ var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 $("#info").append(formattedBioPic);
 
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-$("#header").prepend(formattedRole);
+$("#title").prepend(formattedRole);
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
-$("#header").prepend(formattedName);
+$("#title").prepend(formattedName);
 
 if ( bio.skills.length > 0 )
 {
