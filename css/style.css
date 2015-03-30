@@ -358,11 +358,11 @@ span {
   .nav {
     z-index: 10;
     background-color: #000;
-    width: 300px;
+    width: 280px;
     position: absolute;
     /* This trasform moves the drawer off canvas. */
-    -webkit-transform: translate(-300px, 0);
-    transform: translate(-300px, 0);
+    -webkit-transform: translate(-320px, 0);
+    transform: translate(-320px, 0);
     /* Optionally, we animate the drawer. */
     transition: transform 0.3s ease;
   }
