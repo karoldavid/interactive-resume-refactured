@@ -34,13 +34,6 @@ body {
   border: 1px solid #ddd;
 }
 
-/*#workExperience,
-#projects,
-#education,
-#mapDiv {
-  display: none;
-}*/
-
 hr {
   display: block; height: 1px;
   border: 0; border-top: 1px solid #176bec;
@@ -199,6 +192,16 @@ a {
   padding: 10px;
 }
 
+.wrapper {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+
 .center-content {
   padding-top: 2.5%;
   padding-left: 5%;
@@ -298,6 +301,13 @@ span {
   color: #000;
 }
 
+#info li {
+  padding-top: 5px;
+}
+
+#info li:first-of-type {
+  padding-top: 10px;
+}
 
 #letsConnect {
   text-align: center;
@@ -386,6 +396,12 @@ span {
     width: 32px;
     fill: #E0E0E0;
   }
+
+  #footerContacts li {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #fff;
+  }
 }
 
 @media only screen and (min-width: 750px) {
@@ -419,8 +435,8 @@ span {
 
 @media only screen and (max-width: 500px) {
   h1#name {
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 22px;
+    line-height: 26px;
   }
   #role {
     font-size: 12px;
