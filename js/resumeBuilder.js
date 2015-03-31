@@ -291,7 +291,7 @@ $("#mapDiv").append(googleMap);
 
 // main nav with different colors on hover
 $('#drawer li').hover(function (event) {
-  var colors = ["#176bec", "#d8432e","#ffb500", "#009451"]; // blue, red, yellow, and green
+  var colors = ["#176bec", "#d8432e","#ffb500", "#009451"]; // vivid blue, strong red, (mostly) pure orange, dark cyan/ lime green
   var current = $(this).index();// get index in collection of the clicked item
   $(this).css('background', colors[current]);
   $(this).css('transition', '250ms ease-in');

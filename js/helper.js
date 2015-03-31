@@ -3,10 +3,10 @@ var HTMLheaderRole = '<span id="role">%data%</span><hr/>';
 
 var HTMLcontactGeneric = '<li class="flex-item contact"><span class="gray-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLphone = '<li class="flex-item contact" id="phone"><span class="zocial-call lightblue-text"></span><span class="gray-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item contact" id="email"><a href="#" target="_self"><span class="zocial-email lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
-var HTMLtwitter = '<li class="flex-item contact" id="twitter"><a href="#" target="_blank"><span class="zocial-twitter lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
-var HTMLgithub = '<li class="flex-item contact" id="github"><a href="#" target="_blank"><span class="zocial-github lightblue-text"></span><span class="gray-text">%data%</span></a></li>';
-var HTMLblog = '<li class="flex-item contact" id="blog"><a href="#" target="_blank"><span class="zocial-blog lightblue-text">blog</span><span class="gray-text">%data%</span></a></li>';
+var HTMLemail = '<li class="flex-item contact" id="email"><a href="#" target="_self"><span class="zocial-email soft-tblue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLtwitter = '<li class="flex-item contact" id="twitter"><a href="#" target="_blank"><span class="zocial-twitter soft-blue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLgithub = '<li class="flex-item contact" id="github"><a href="#" target="_blank"><span class="zocial-github soft-blue-text"></span><span class="gray-text">%data%</span></a></li>';
+var HTMLblog = '<li class="flex-item contact" id="blog"><a href="#" target="_blank"><span class="zocial-blog soft-blue-text">blog</span><span class="gray-text">%data%</span></a></li>';
 var HTMLlocation = '<li class="flex-item contact" id="location"><span class="gray-text">%data%</span></li>';
 
 var HTMLbioPic = '<img src="%data%" class="biopic">';
@@ -45,7 +45,6 @@ var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 var HTMLinfoWindowContent = '<div class="title">%data%</div>';
 
-
 // International Name Converter
 $(document).ready(function() {
   $('button').click(function() {
@@ -53,7 +52,6 @@ $(document).ready(function() {
     $('#name').html(iName);
   });
 });
-
 
 // Collecting Click Locations
 clickLocations = [];
@@ -74,11 +72,9 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
-
 // Custom Google Map; https://developers.google.com/maps/documentation/javascript/reference
 
 var map; // declares a global map variable
-
 
 //initializeMap() is called when page is loaded
 function initializeMap() {
@@ -88,7 +84,6 @@ function initializeMap() {
   var mapOptions = {
     disableDefaultUI: true
   };
-
 
   //This next line makes `map` a new Google Map JavaScript Object and attaches it to <div id="map">
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
@@ -117,7 +112,6 @@ function initializeMap() {
 
     return locations;
   }
-
 
   // createMapMarker(placeData) reads Google Places search results to create map pins.
   // placeData is the object returned from search results containing information
