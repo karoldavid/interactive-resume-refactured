@@ -358,7 +358,7 @@ span {
   .nav {
     z-index: 10;
     background-color: #000;
-    width: 280px;
+    width: 240px;
     position: absolute;
     /* This trasform moves the drawer off canvas. */
     -webkit-transform: translate(-320px, 0);
@@ -380,7 +380,7 @@ span {
     display: inline-block;
     position: absolute;
     right: 0;
-    padding: 0 5%;
+    padding: 1em 5%;
   }
   .header__menu svg {
     width: 32px;
