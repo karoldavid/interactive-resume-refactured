@@ -1,16 +1,17 @@
 var bio = {
   "name" : "Karol Zyskowski",
   "role": "Web Developer",
-  "contacts" : {
-    "phone" : "+49 30 301 393 71",
-    "email" : "k.zysk@zoho.com",
-    "github" : "@karoldavid",
-    "twitter" : "@karoldawid",
-    "location" : "Berlin, Germany"
-  },
   "welcomeMsg": "Once the genie is out of the bottle...",
   "bioPic" : "images/karol.png",
   "skills": ["Responsive Websites","Mobile Development", "Wordpress", "Python","JavaScript","PHP"]
+};
+
+var contact = {
+  "phone" : "+49 30 301 393 71",
+  "email" : "k.zysk@zoho.com",
+  "github" : "@karoldavid",
+  "twitter" : "@karoldawid",
+  "location" : "Berlin, Germany"
 };
 
 var work = {
@@ -182,7 +183,7 @@ var education = {
       "title" : "Sales Force App Development",
       "school" : "Udacity",
       "dates" : "2014",
-      "url" : "https://www.udacity.com/course/ud032"
+      "url" : "https://www.udacity.com/course/ud162"
     },
     {
       "title" : "Scientific Programming with Python",
@@ -210,20 +211,23 @@ bio.display = function() {
   }
   var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMsg);
   $("#info").append(formattedWelcomeMsg);
-  var formattedphone = HTMLphone.replace("%data%", bio.contacts.phone);
+}
+
+contact.display = function() {
+  var formattedphone = HTMLphone.replace("%data%", contact.phone);
   $("#footerContacts").append(formattedphone);
-  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+  var formattedEmail = HTMLemail.replace("%data%", contact.email);
   $("#footerContacts").append(formattedEmail);
-  var formattedGithub= HTMLgithub.replace("%data%", bio.contacts.github);
+  var formattedGithub= HTMLgithub.replace("%data%", contact.github);
   $("#footerContacts").append(formattedGithub);
-  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+  var formattedTwitter = HTMLtwitter.replace("%data%", contact.twitter);
   $("#footerContacts").append(formattedTwitter);
-  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+  var formattedLocation = HTMLlocation.replace("%data%", contact.location);
   $("#footerContacts").append(formattedLocation);
 
   // add urls to footerContacts zocial
   $('#footerContacts li').each(function() {
-    var url = {"email" : "mailto:" + bio.contacts.email, "github" : "https://github.com/karoldavid?tab=repositories", "twitter" : "https://twitter.com/karoldawid"};
+    var url = {"email" : "mailto:" + contact.email, "github" : "https://github.com/karoldavid?tab=repositories", "twitter" : "https://twitter.com/karoldawid"};
     var a = $(this).find('a');
     var social = this.id;
     a.attr('href', url[social]);
@@ -308,5 +312,6 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+contact.display();
 
 $("#mapDiv").append(googleMap);
