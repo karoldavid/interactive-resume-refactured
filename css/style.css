@@ -18,11 +18,11 @@ body {
   width: 100%;
   min-width: 320px;
 }
-.header__menu {
+.header-menu {
   display: none;
 }
 
-.header__title {
+.header-title {
 
 }
 
@@ -226,7 +226,7 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
-  display: none;
+  display: block;
 }
 
 img {
@@ -256,13 +256,13 @@ span {
   margin-right: auto;
 }
 
-.nav__list {
+.nav-list {
   width: 100%;
   padding: 0;
   margin: 0;
 }
 
-.nav__item {
+.nav-item {
   box-sizing: border-box;
   display: inline-block;
   width: 24%;
@@ -348,8 +348,7 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skillsH3,
-  .biopic {
+  #skillsH3 {
     display: block;
   }
 }
@@ -380,6 +379,13 @@ span {
   #role {
     display: none;
   }
+  .biopic {
+    width: 30%;
+  }
+  #skills li span{
+    font-size: 14px;
+    padding: 0px 3px 3px 3px;
+  }
   .nav {
     z-index: 10;
     background-color: #000000;
@@ -395,19 +401,19 @@ span {
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-  .nav__item {
+  .nav-item {
     display: list-item;
     border-bottom: 1px solid #176bec; /* vivid blue */
     width: 100%;
     text-align: left;
   }
-  .header__menu {
+  .header-menu {
     display: inline-block;
     position: absolute;
     right: 0;
     padding: 0 5% 0 5%;
   }
-  .header__menu svg {
+  .header-menu svg {
     width: 32px;
     fill: #e0e0e0; /* very light gray */
   }
