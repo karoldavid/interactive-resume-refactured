@@ -29,14 +29,14 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" width="200">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="#" target="_blank">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 var HTMLschoolMajor = '<em><br>Major: %data%</em>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a href="#">%data%';
+var HTMLonlineTitle = '<a href="#" target="_blank">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
@@ -45,7 +45,7 @@ var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 var HTMLinfoWindowContent = '<div class="title">%data%</div>';
 
-// International Name Converter
+// international name converter
 $(document).ready(function() {
   $('button').click(function() {
     var iName = inName() || function(){};
@@ -53,7 +53,7 @@ $(document).ready(function() {
   });
 });
 
-// Collecting Click Locations
+// collecting click locations
 clickLocations = [];
 
 function logClicks(x,y) {
@@ -72,7 +72,7 @@ $(document).click(function(loc) {
   logClicks(x,y);
 });
 
-// Custom Google Map; https://developers.google.com/maps/documentation/javascript/reference
+// custom google map; https://developers.google.com/maps/documentation/javascript/reference
 
 var map; // declares a global map variable
 
@@ -113,12 +113,12 @@ function initializeMap() {
     return locations;
   }
 
-  // createMapMarker(placeData) reads Google Places search results to create map pins.
+  // createMapMarker(placeData) reads google places search results to create map pins
   // placeData is the object returned from search results containing information
-  // about a single location.
+  // about a single location
   function createMapMarker(placeData) {
 
-    // The next lines save location data from the search result object to local variables
+    // the next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
@@ -135,7 +135,7 @@ marker.setMap(map);
 
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
-    // about a location.
+    // about a location
     var formattedContent = HTMLinfoWindowContent.replace("%data%", name);
 
     var infoWindow = new google.maps.InfoWindow({
@@ -156,8 +156,8 @@ marker.setMap(map);
 
   }
 
-  // callback(results, status) makes sure the search returned results for a location.
-  // If so, it creates a new map marker for that location.
+  // callback(results, status) makes sure the search returned results for a location
+  // if so, it creates a new map marker for that location
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       createMapMarker(results[0]);
@@ -168,11 +168,11 @@ marker.setMap(map);
   // and fires off Google place searches for each location
   function pinPoster(locations) {
 
-    // creates a Google place search service object. PlacesService does the work of
-    // actually searching for location data.
+    // creates a google place search service object
+    // placesService does the work of actually searching for location data
     var service = new google.maps.places.PlacesService(map);
 
-    // Iterates through the array of locations, creates a search object for each location
+    // iterates through the array of locations, creates a search object for each location
     for (var place in locations) {
 
       // the search request object
@@ -180,13 +180,13 @@ marker.setMap(map);
         query: locations[place]
       };
 
-      // Actually searches the Google Maps API for location data and runs the callback
+      // actually searches the google maps api for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
     }
   }
 
-  // Sets the boundaries of the map based on pin locations
+  // sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
 
   // locations is an array of location strings returned from locationFinder()
@@ -198,12 +198,12 @@ marker.setMap(map);
 
 }
 
-// Calls the initializeMap() function when the page loads
+// calls the initializeMap() function when the page loads
 window.addEventListener('load', initializeMap);
 
-// Vanilla JS way to listen for resizing of the window
+// vanilla js way to listen for resizing of the window
 // and adjust map bounds
 window.addEventListener('resize', function(e) {
-  // Make sure the map bounds get updated on page resize
+  // make sure the map bounds get updated on page resize
   map.fitBounds(mapBounds);
 });

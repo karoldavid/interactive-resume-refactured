@@ -99,7 +99,7 @@
       document.getElementById('mapDiv').style.backgroundColor = '#000';
     }
 
-    // Hide all sections except google maps
+    // hide all sections except google maps
     $('main .section').each( function(i,e) {
        var section = $('#' + e.id);
        if (section.selector != '#mapDiv') {
@@ -107,7 +107,7 @@
        }
     });
 
-    // Open the drawer when the menu icon is clicked.
+    // open the drawer when the menu icon is clicked
     var menu = document.querySelector('#menu');
     var main = document.querySelector('main');
     var drawer = document.querySelector('.nav');
@@ -124,7 +124,7 @@
     // main nav with different colors on hover
     $('#drawer li').hover(function (event) {
       var colors = ["#176bec", "#d8432e","#ffb500", "#009451"]; // vivid blue, strong red, (mostly) pure orange, dark cyan/ lime green
-      var current = $(this).index();// get index in collection of the clicked item
+      var current = $(this).index(); // get index in collection of the clicked item
       $(this).css('background', colors[current]);
       $(this).css('transition', '250ms ease-in');
       $(this).css('cursor', 'pointer');
@@ -134,7 +134,7 @@
         $(this).css('transition', '250ms ease-out');
     });
 
-    // main nav sections fade in/ out on click
+    // main nav sections fade in & out on click
     $("#drawer li").click(function (event) {
       var current = $(this).index(); // get index of clicked section
       $('main .section').each( function(i,e) {
@@ -157,7 +157,7 @@
       $('#info').show(1000);
     });
 
-    //remove all empty href attributes
+    // remove all empty href attributes
     $("a[href='#']").each(function() {
       this.removeAttribute("href");
     });

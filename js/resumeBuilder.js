@@ -44,7 +44,7 @@ var work = {
       "title" : "Production Manager",
       "location" : "Berlin, Germany",
       "dates": "2010-2011",
-      "description" : "Tour Performance Management",
+      "description" : "Tour Performance Management: 9 month, 7 countries, 30 shows",
       "url" : "http://www.dorkypark.org/"
     },
     {
@@ -57,7 +57,7 @@ var work = {
     },
     {
       "employer" : "wbpr GmbH",
-      "title" : "Junior...",
+      "title" : "Junior PR Consultant",
       "location" : "Berlin, Germany",
       "dates": "2009",
       "description" : "PR & Event Management",
@@ -97,7 +97,7 @@ var projects = {
      {
         "title" : "Responsive Website",
         "dates" : "2015",
-        "description" : "Responsive Website for a martial arts school",
+        "description" : "Responsive Website for a Martial Arts School",
         "url" : "http://karoldavid.github.io/chinese-boxing/",
         "images" : ["images/logo.svg"]
      },
@@ -119,12 +119,14 @@ var projects = {
       "title" : "PR Event for IFA (International Consumer Electronics)",
       "dates" : "2009",
       "description" : "Organized and coordinated event, planned and wrote parcours, invited media",
+      "url" : "http://www.morgenpost.de/printarchiv/berlin/article1165716/Loecher-in-die-Technik-fragen.html",
       "images" : ["images/placeholder.jpg"]
    },
    {
       "title" : "Nouvelle PAC de L'UE",
       "dates" : "2004",
       "description" : "Bourse de la Fondation Robert Bosch pour un stage au sein de la CFPJ de Paris",
+      "url" : "http://www.cfpj.com/",
       "images" : ["images/placeholder.jpg"]
    },
    {
@@ -140,7 +142,7 @@ var education = {
   "schools" : [
   {
     "name" : "University Bremen",
-    "location" : "Bremen Germany",
+    "location" : "Bremen, Germany",
     "degree" : "Master in Political Science",
     "major" : ["Political Science"],
     "dates" : "2001-2007",
@@ -148,24 +150,24 @@ var education = {
   },
   {
     "name" : "Institut d'Etudes Politiques de Lille",
-    "location" : "Lille France",
+    "location" : "Lille, France",
     "degree" : "Certificat d'Etudes Politiques",
     "major" : ["Political Science", "French Studies"],
     "dates" : "2004-2005",
     "url" : "http://www.sciencespo-lille.eu/"
   },
   {
-    "name" : "English Language School",
-    "location" : "Auckland New Zealand",
-    "degree" : "Certificate",
-    "major" : [],
+    "name" : "GEOS Auckland Language Center",
+    "location" : "Auckland, New Zealand",
+    "degree" : "Certificate of Achievement",
+    "major" : ["English"],
     "dates" : "2005",
-    "url" : "#"
+    "url" : "http://www.language-programs.net/languageschool/12/18/geos_auckland_language_centre_auckland.htm"
   }
 ],
   "onlineClasses" : [
     {
-      "title" : "Nano Degree Front End Web Developer",
+      "title" : "Nanodegree Front-End Web Development",
       "school" : "Udacity",
       "dates" : "2015",
       "url" : "https://www.udacity.com/course/ud032"
@@ -186,7 +188,7 @@ var education = {
       "title" : "Scientific Programming with Python",
       "school" : "MIT",
       "dates" : "2013",
-      "url" : "https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0#.VPSQ6DVVK1E"
+      "url" : "https://verify.edx.org/cert/10cbffa98e364fbb997fd633dc6c2301"
     }
   ]
 };
@@ -265,6 +267,7 @@ education.display = function() {
   for (school in education.schools) {
     $("#education").append(HTMLschoolStart);
     var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+    formattedSchoolName = formattedSchoolName.replace("#", education.schools[school].url);
     var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
     $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
@@ -279,6 +282,7 @@ education.display = function() {
     for (onlineClass in education.onlineClasses) {
       $("#education").append(HTMLschoolStart);
       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
+      formattedOnlineTitle = formattedOnlineTitle.replace("#", education.onlineClasses[onlineClass].url);
       var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
       $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
       var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates);
