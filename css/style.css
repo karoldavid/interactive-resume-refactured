@@ -11,13 +11,19 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+
 body {
   background-color: #eeeeee; /* very light gray */
   font-size: 16px;
+  width: 100%;
+  min-width: 320px;
 }
-
 .header__menu {
   display: none;
+}
+
+.header__title {
+
 }
 
 .clearfix {
@@ -34,8 +40,10 @@ body {
 
 hr {
   display: block; height: 1px;
-  border: 0; border-top: 1px solid #176bec; /* vivid blue */
-  margin: 1em 0; padding: 0;
+  border: 0;
+  border-top: 1px solid #176bec; /* vivid blue */
+  margin: 1em 0 1em 0;
+  padding: 0 0 0 0;
 }
 
 h1 {
@@ -49,6 +57,7 @@ h1 {
 
 h1:hover {
   color: #176bec; /* vivid blue */
+  cursor: pointer;
 }
 
 h2 {
@@ -113,7 +122,7 @@ a {
 .welcome-message {
   font-style: italic;
   font-size: 18px;
-  color: #f3f3f3; /*  very light gray (mostly white */
+  color: #f3f3f3; /*  very light gray (mostly white) */
   line-height: 28px;
   margin: auto;
 }
@@ -126,6 +135,7 @@ a {
 .soft-blue-text{
   color: #55acee;
 }
+
 .blue-text {
   color: #176bec;
 }
@@ -169,7 +179,7 @@ a {
 }
 
 /* flex-row for footer zocial icons*/
-.flex {
+.flex-footer{
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
@@ -178,7 +188,7 @@ a {
   padding: 10px;
 }
 
-.wrapper {
+.flex-info {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
@@ -189,10 +199,7 @@ a {
 }
 
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5% 2.5% 5%;
 }
 
 ul {
@@ -223,7 +230,7 @@ ul {
 }
 
 img {
-  padding: 10px;
+  padding: 10px 10px 10px 10px;
   max-width: 100%;
 }
 
@@ -232,15 +239,15 @@ img {
   font: 10px sans-serif;
   background-color: #4a4a4a; /* very dark gray */
   text-align: right;
-  padding: 3px;
-  margin: 1px;
+  padding: 3px 3px 3px 3px;
+  margin: 1px 1px 1px 1px;
   height: 12px;
   color: #ffffff;
   display: inline-block;
 }
 
 span {
-  padding: 5px;
+  padding: 5px 5px 5px 5px;
 }
 
 .nav {
@@ -315,6 +322,12 @@ span {
   padding-bottom: 5%;
 }
 
+/*
+*
+* mediia queries
+*
+*/
+
 @media only screen and (max-width: 1280px) {
   .welcome-message {
     display: none;
@@ -323,9 +336,6 @@ span {
 
 
 @media only screen and (max-width: 1024px) {
-  /*#letsConnect {
-    margin-top: 5%;
-  }*/
   #map {
     height: 90%;
   }
@@ -337,24 +347,38 @@ span {
   }
 }
 
+@media only screen and (min-width: 750px) {
+  #skillsH3,
+  .biopic {
+    display: block;
+  }
+}
+
 @media only screen and (max-width: 750px) {
-  /*#letsConnect {
-    margin-top: 10%;
-  }*/
   .biopic {
     width: 150px;
   }
 }
 
-@media screen and (max-width: 549px) {
-  .header__logo {
-    height: 48px;
-    margin-right: 0.5em;
+@media only screen and (max-width: 650px) {
+  .flex-footer { /* flex-column for footer zocial icons*/
+    flex-direction: column;
   }
-  .header__title {
-    margin-left: 0;
-    font-size: 2em;
-    vertical-align: bottom;
+  #footerContacts li {
+    margin: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;
+  }
+  .center {
+    text-align: center;
+  }
+  #map {
+    margin: 0 10% 0 10%;
+  }
+}
+
+@media only screen and (max-width: 549px) {
+  #role {
+    display: none;
   }
   .nav {
     z-index: 10;
@@ -381,7 +405,7 @@ span {
     display: inline-block;
     position: absolute;
     right: 0;
-    padding: 0 5%;
+    padding: 0 5% 0 5%;
   }
   .header__menu svg {
     width: 32px;
@@ -389,41 +413,22 @@ span {
   }
 }
 
-@media only screen and (min-width: 750px) {
-  #skillsH3,
-  .biopic {
-    display: block;
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .flex { /* flex-column for footer zocial icons*/
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 10px;
-  }
-  #footerContacts li {
-    margin: 10px;
-    padding: 5px;
-  }
-
-  .center {
-    text-align: center;
-  }
-  /*#map {
-    margin: 0 10%;
-  }*/
-}
-
 @media only screen and (max-width: 500px) {
   h1#name {
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 30px;
+    line-height: 38px;
   }
-  #role {
-    font-size: 12px;
+}
+
+@media only screen and (max-width: 420px) {
+  h1#name {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  #map {
+    height: 80%;
   }
 }

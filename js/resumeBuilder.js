@@ -133,7 +133,7 @@ var projects = {
       "description" : "3ieme place" ,
       "images" : ["images/placeholder.jpg"]
    }
- ]
+  ]
 };
 
 var education = {
@@ -188,9 +188,8 @@ var education = {
       "dates" : "2013",
       "url" : "https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0#.VPSQ6DVVK1E"
     }
-]
+  ]
 };
-
 
 bio.display = function() {
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -280,10 +279,6 @@ education.display = function() {
     for (onlineClass in education.onlineClasses) {
       $("#education").append(HTMLschoolStart);
       var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineClass].title);
-      //if (typeof(education.onlineClasses[onlineClass].url) !== 'undefined') {
-      //$(formattedOnlineTitle).replace('#', education.onlineClasses[onlineClass].url);
-      //href.attr('href', education.onlineClasses[onlineClass].url);
-      //}
       var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineClass].school);
       $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
       var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates);
@@ -296,13 +291,10 @@ education.display = function() {
 
 function inName(oldName) {
     var finalName = oldName;
-    // Your code goes here!
     var names = oldName.split(" ");
-
     names[0] = names[0].slice(0,1).toUpperCase() + names[0].slice(1).toLowerCase();
     names[1] = names[1].toUpperCase();
     finalName = names.join(" ");
-    // Don't delete this line!
     return finalName;
 };
 

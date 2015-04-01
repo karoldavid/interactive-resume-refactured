@@ -42,7 +42,7 @@
           <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
         </svg>
       </a>
-      <div id="title"></div>
+      <div id="title" class="header__title"></div>
       <nav id="drawer" class="nav">
         <ul class="nav__list">
           <li class="nav__item">Career</li>
@@ -51,7 +51,7 @@
           <li class="nav__item">Locations</li>
         </ul>
       </nav>
-      <div id="info" class="wrapper"></div>
+      <div id="info" class="flex-info"></div>
     </div>
 
     <main>
@@ -70,7 +70,7 @@
       </div>
       <div id="letsConnect" class="dark-gray">
         <h2 class='soft-blue center-text'>Let's Connect</h2>
-        <ul id="footerContacts" class="flex"></ul>
+        <ul id="footerContacts" class="flex-footer"></ul>
       </div>
     </main>
 
@@ -136,23 +136,25 @@
 
     // main nav sections fade in/ out on click
     $("#drawer li").click(function (event) {
-      var navItems = [];
-      // build array with section ids
+      var current = $(this).index(); // get index of clicked section
       $('main .section').each( function(i,e) {
-        navItems.push(e.id);
+        if (current != i) {
+          $('#' + e.id).hide(1000);
+        } else { current = e.id; } // get id of clicked section
       });
-      var current = navItems[$(this).index()];
-      for (item in navItems) {
-        if (navItems[item] != current) {
-          $('#' + navItems[item]).hide(1000);// make sure that all inactive sections are hidden
-        }
-        $('#info').hide(1000);// hide bioPic and skills when one section is shown
+      var section = document.getElementById(current);
+      if (section.style.display != 'none') {
+        $('#info').show(1000); // show bioPic and skills when all sections are hidden
+      } else {
+        $('#info').hide(1000); // hide bioPic and skills when one section is shown
       }
-      var info = document.getElementById(current);
-      if (info.style.display != 'none') {
-        $('#info').show(1000);// show bioPic and skills when all sections are hidden
-      };
-      $('#' + current).toggle(1000);//show or hide clicked section
+      $('#' + current).toggle(1000); // show or hide clicked section
+    });
+
+    // click name to show info and hide sections
+    $("#name").click(function (event) {
+      $('main .section').hide(1000);
+      $('#info').show(1000);
     });
 
     //remove all empty href attributes
