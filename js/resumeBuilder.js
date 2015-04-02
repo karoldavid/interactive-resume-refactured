@@ -9,8 +9,9 @@ var bio = {
 var contact = {
   "phone" : "+49 30 301 393 71",
   "email" : "k.zysk@zoho.com",
-  "github" : "@karoldavid",
-  "twitter" : "@karoldawid",
+  "github" : {"name" : "@karoldavid", "url" : "https://github.com/karoldavid?tab=repositories"},
+  "twitter" : {"name" : "@karoldawid", "url" : "https://twitter.com/karoldawid"},
+  "blog" : {"name" : "", "url" : ""},
   "location" : "Berlin, Germany"
 };
 
@@ -77,8 +78,7 @@ var work = {
       "title" : "Assistent Tourmanagement",
       "location" : "Bremen, Germany",
       "dates" : "2006-2008",
-      "description" : "Assisted preparing, organizing, and coordinating classical music concerts",
-      "images" : ["images/placeholder.jpg"],
+      "description" : "Organized and coordinated classical music concerts",
       "url" : "http://www.kammerphilharmonie.com/"
     },
     {
@@ -87,23 +87,22 @@ var work = {
       "location" : "Paris, France",
       "dates" : "2005",
       "description" : "Casted and invited guests for TV debates, researched and wrote treatments for documentary films" ,
-      "images" : ["images/placeholder.jpg"],
       "url" : "http://www.docenstock.com/"
-    },
+    }
   ]
 };
 
 var projects = {
    "projects": [
      {
-        "title" : "Responsive Website",
+        "title" : "Draft: Responsive Website",
         "dates" : "2015",
         "description" : "Responsive Website for a Martial Arts School",
-        "url" : "http://karoldavid.github.io/chinese-boxing/",
-        "images" : ["images/logo.svg"]
+        "url" : "http://karoldavid.github.io/chinese-boxing-international/",
+        "images" : ["images/cbii.svg"]
      },
      {
-        "title" : "Movie Poster Gallery Blog",
+        "title" : "Draft: Movie Poster Gallery Blog",
         "dates" : "2015",
         "description" : "Polish Movie Poster Gallery Website with art works from 1955 to 1989",
         "url" : "http://karoldavid.github.io/movie-poster-blog/",
@@ -114,27 +113,25 @@ var projects = {
        "dates" : "2015",
        "description" : "Responsive Website for an author and TV script writer",
        "url" : "http://www.susanne-fuelscher.de/",
-       "images" : ["images/susanne-fuelscher_small.jpg"]
+       "images" : ["images/susanne-fuelscher.jpg"]
    },
    {
       "title" : "PR Event for IFA (International Consumer Electronics)",
       "dates" : "2009",
       "description" : "Organized and coordinated event, planned and wrote parcours, invited media",
       "url" : "http://www.morgenpost.de/printarchiv/berlin/article1165716/Loecher-in-die-Technik-fragen.html",
-      "images" : ["images/placeholder.jpg"]
    },
    {
       "title" : "Nouvelle PAC de L'UE",
       "dates" : "2004",
       "description" : "Bourse de la Fondation Robert Bosch pour un stage au sein de la CFPJ de Paris",
       "url" : "http://www.cfpj.com/",
-      "images" : ["images/placeholder.jpg"]
    },
    {
       "title" : "Concours de L'Express",
       "dates" : "2004-2005",
-      "description" : "3ieme place" ,
-      "images" : ["images/placeholder.jpg"]
+      "description" : "3ieme place",
+      "url" : "http://www.lexpress.fr/"
    }
   ]
 };
@@ -171,25 +168,29 @@ var education = {
       "title" : "Nanodegree Front-End Web Development",
       "school" : "Udacity",
       "dates" : "2015",
-      "url" : "https://www.udacity.com/course/ud032"
+      "description" : "New type of project-based credential. It is built with industry to master skills that employers truly seek in a Front-End Web Developer",
+      "url" : "https://www.udacity.com/course/nd001"
     },
     {
       "title" : "DataWrangling with MongoDB",
       "school" : "Udacity",
       "dates" : "2014",
+      "description" : "Gather & extract data from widely used data formats. Assess quality of data. Best practices for data cleaning. MongoDB",
       "url" : "https://www.udacity.com/course/ud032"
     },
     {
       "title" : "Sales Force App Development",
       "school" : "Udacity",
       "dates" : "2014",
+      "description" : "Build powerful web & mobile apps & host them in the cloud",
       "url" : "https://www.udacity.com/course/ud162"
     },
     {
-      "title" : "Scientific Programming with Python",
+      "title" : "Introduction to Computer Science and Programming Using Python",
       "school" : "MIT",
       "dates" : "2013",
-      "url" : "https://verify.edx.org/cert/10cbffa98e364fbb997fd633dc6c2301"
+      "description" : "https://verify.edx.org/cert/10cbffa98e364fbb997fd633dc6c2301",
+      "url" : "https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-0#.VR2O9Mvh5z0"
     }
   ]
 };
@@ -218,16 +219,16 @@ contact.display = function() {
   $("#footerContacts").append(formattedphone);
   var formattedEmail = HTMLemail.replace("%data%", contact.email);
   $("#footerContacts").append(formattedEmail);
-  var formattedGithub= HTMLgithub.replace("%data%", contact.github);
+  var formattedGithub= HTMLgithub.replace("%data%", contact.github["name"]);
   $("#footerContacts").append(formattedGithub);
-  var formattedTwitter = HTMLtwitter.replace("%data%", contact.twitter);
+  var formattedTwitter = HTMLtwitter.replace("%data%", contact.twitter["name"]);
   $("#footerContacts").append(formattedTwitter);
   var formattedLocation = HTMLlocation.replace("%data%", contact.location);
   $("#footerContacts").append(formattedLocation);
 
-  // add urls to footerContacts zocial
+  //add email + urls to footerContacts zocial
   $('#footerContacts li').each(function() {
-    var url = {"email" : "mailto:" + contact.email, "github" : "https://github.com/karoldavid?tab=repositories", "twitter" : "https://twitter.com/karoldawid"};
+    var url = {"email" : "mailto:" + contact.email, "github": contact.github["url"], "twitter" : contact.twitter["url"]};
     var a = $(this).find('a');
     var social = this.id;
     a.attr('href', url[social]);
@@ -291,8 +292,8 @@ education.display = function() {
       $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
       var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineClass].dates);
       $(".education-entry:last").append(formattedOnlineDates);
-      var formattedOnlineURL= HTMLonlineURL.replace("%data%", education.onlineClasses[onlineClass].url);
-      $(".education-entry:last").append(formattedOnlineURL);
+      var formattedOnlineDescription = HTMLonlineDescription.replace("%data%", education.onlineClasses[onlineClass].description);
+      $(".education-entry:last").append(formattedOnlineDescription);
     }
   }
 }

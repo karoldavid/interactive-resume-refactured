@@ -5,51 +5,152 @@
 }
 
 * {
-  padding:0;
-  margin:0;
-  /*font-family: 'Lato', sans-serif;*/
+  padding: 0;
+  margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
 
-
 body {
-  background-color: #eeeeee; /* very light gray */
+  background-color: #eee; /* very light gray */
   font-size: 16px;
   width: 100%;
   min-width: 320px;
 }
-.header-menu {
-  display: none;
+
+/*
+ *
+ * header
+ *
+ */
+
+#header {
+  background-color: #252525; /* very dark gray (mostly black) */
+  text-transform: uppercase;
 }
 
-.header-title {
-
+.center-content {
+  padding: 2.5% 5%;
 }
 
 .clearfix {
   overflow: auto;
 }
 
-.education-entry,
-.work-entry,
-.project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
-  border: 1px solid #dddddd; /* very light gray */
+.header-title {
+
+}
+
+.header-menu {
+  display: none;
+}
+
+#role {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
 }
 
 hr {
-  display: block; height: 1px;
+  display: block;
+  height: 1px;
   border: 0;
   border-top: 1px solid #176bec; /* vivid blue */
-  margin: 1em 0 1em 0;
-  padding: 0 0 0 0;
+  margin: 1em 0;
+  padding: 0;
 }
+
+.biopic {
+  float: left;
+  padding: 10px;
+  width: 200px;
+  display: block;
+}
+
+img {
+  padding: 10px;
+  max-width: 100%;
+}
+
+#skillsH3 {
+  color: #d3d3d3; /*light gray*/
+  display: none;
+}
+
+.welcome-message {
+  font-style: italic;
+  font-size: 18px;
+  color: #f3f3f3; /*  very light gray (mostly white) */
+  line-height: 28px;
+  margin: auto;
+}
+
+.header-info li {
+  padding: 5px 0 0 0;
+}
+
+.header-info li:first-of-type {
+  padding: 10px 0 0 0;
+}
+
+/*
+ *
+ * content
+ *
+ */
+
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
+  border: 1px solid #dddddd; /* very light gray */
+}
+
+.date-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999; /* dark gray */
+  line-height: 16px;
+  float: left;
+}
+
+.location-text {
+  font-style: italic;
+  font-size: 14px;
+  color: #999; /* dark gray */
+  line-height: 16px;
+  float: right;
+}
+
+/*
+ *
+ * footer
+ *
+ */
+
+#letsConnect {
+  text-align: center;
+}
+
+.contacts a .gray-text:hover {
+   cursor: pointer;
+   text-decoration: underline;
+   color: #fff;
+}
+
+.contacts li .gray-text:hover {
+   color: #fff;
+}
+
+/*
+ *
+ * text
+ *
+ */
 
 h1 {
   font-size: 40px;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
   line-height: 48px;
   display: inline;
   text-transform: uppercase;
@@ -63,7 +164,7 @@ h1:hover {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #000000;
+  color: #000;
   line-height: 29px;
   padding: 10px;
 }
@@ -71,7 +172,7 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #000;
   line-height: 22px;
 }
 
@@ -86,30 +187,12 @@ h2,
 h3,
 h4,
 h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.date-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999; /* dark gray */
-  line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999; /* dark gray */
-  line-height: 16px;
-  float: right;
+  padding: 10px 5%;
 }
 
 p {
   font-size: 16px;
-  color: #333333; /* very dark gray */
+  color: #333; /* very dark gray */
   line-height: 21px;
 }
 
@@ -119,18 +202,19 @@ a {
   display: block;
 }
 
-.welcome-message {
-  font-style: italic;
-  font-size: 18px;
-  color: #f3f3f3; /*  very light gray (mostly white) */
-  line-height: 28px;
-  margin: auto;
+ul {
+  list-style-type: none;
 }
 
-#skillsH3 {
-  color: #d3d3d3; /*light gray*/
-  display: none;
+span {
+  padding: 5px;
 }
+
+/*
+*
+* font- and background-colors
+*
+*/
 
 .soft-blue-text{
   color: #55acee;
@@ -142,7 +226,7 @@ a {
 
 .white-text {
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 
 .light-gray-text {
@@ -160,100 +244,28 @@ a {
 }
 
 .light-gray {
-  background-color: #eeeeee;
+  background-color: #eee;
 }
 
 .gray {
   background-color: #d3d3d3;
-  padding-bottom: 10px;
-  clear:both;
+  padding: 0 0 10px 0;
+  clear: both;
 }
 
 .dark-gray {
   background-color: #090909;
 }
 
-#header {
-  background-color: #252525; /* very dark gray (mostly black) */
-  text-transform: uppercase;
-}
-
-/* flex-row for footer zocial icons*/
-.flex-footer{
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-.flex-info {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px;
-}
-
-.center-content {
-  padding: 2.5% 5% 2.5% 5%;
-}
-
-ul {
-  list-style-type: none;
-}
-
-#footerContacts a .gray-text:hover {
-   cursor: pointer;
-   text-decoration: underline;
-   color: #ffffff;
-}
-
-#footerContacts li .gray-text:hover {
-   color: #ffffff;
-}
-
-#role {
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #ffffff;
-}
-
-.biopic {
-  float: left;
-  padding: 10px;
-  width: 200px;
-  display: block;
-}
-
-img {
-  padding: 10px 10px 10px 10px;
-  max-width: 100%;
-}
-
-/* Bar chart stuff */
-.chart div {
-  font: 10px sans-serif;
-  background-color: #4a4a4a; /* very dark gray */
-  text-align: right;
-  padding: 3px 3px 3px 3px;
-  margin: 1px 1px 1px 1px;
-  height: 12px;
-  color: #ffffff;
-  display: inline-block;
-}
-
-span {
-  padding: 5px 5px 5px 5px;
-}
+/*
+*
+* navigation
+*
+*/
 
 .nav {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .nav-list {
@@ -273,36 +285,36 @@ span {
 }
 
 .nav li {
-  color: #ffffff;
+  color: #fff;
 }
 
 .nav li:hover {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
 .nav a {
   text-decoration: none;
-  color: #ffffff;
+  color: #fff;
   font-weight: bold;
   padding: 0.5em auto;
 }
 
 .nav a:hover {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
-#info li {
-  padding-top: 5px;
-}
+/*
+ *
+ * map
+ *
+ */
 
-#info li:first-of-type {
-  padding-top: 10px;
-}
-
-#letsConnect {
-  text-align: center;
+#mapDiv {
+  height: 400px;
+  width: 100%;
+  padding: 0 0 5% 0;
 }
 
 #map {
@@ -316,24 +328,44 @@ span {
   font-weight: bold;
 }
 
-#mapDiv {
-  height: 400px;
-  width: 100%;
-  padding-bottom: 5%;
+/*
+ *
+ * flex
+ *
+ */
+
+/* header info: biopic, skills, welcome message */
+.flex-info {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+/* footer zocial icons */
+.flex-footer{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 /*
-*
-* mediia queries
-*
-*/
+ *
+ * media queries
+ *
+ */
 
 @media only screen and (max-width: 1280px) {
   .welcome-message {
     display: none;
   }
 }
-
 
 @media only screen and (max-width: 1024px) {
   #map {
@@ -360,18 +392,18 @@ span {
 }
 
 @media only screen and (max-width: 650px) {
-  .flex-footer { /* flex-column for footer zocial icons*/
+  .flex-footer {
     flex-direction: column;
   }
-  #footerContacts li {
-    margin: 10px 10px 10px 10px;
-    padding: 5px 5px 5px 5px;
+  .contacts li {
+    margin: 10px;
+    padding: 5px;
   }
   .center {
     text-align: center;
   }
   #map {
-    margin: 0 10% 0 10%;
+    margin: 0 10%;
   }
 }
 
@@ -382,13 +414,13 @@ span {
   .biopic {
     width: 30%;
   }
-  #skills li span{
+  .header-info li span{
     font-size: 14px;
-    padding: 0px 3px 3px 3px;
+    padding: 0 3px 3px 3px;
   }
   .nav {
     z-index: 10;
-    background-color: #000000;
+    background-color: #000;
     width: 240px;
     position: absolute;
     /* This trasform moves the drawer off canvas. */
@@ -411,7 +443,7 @@ span {
     display: inline-block;
     position: absolute;
     right: 0;
-    padding: 0 5% 0 5%;
+    padding: 0 5%;
   }
   .header-menu svg {
     width: 32px;
@@ -420,14 +452,14 @@ span {
 }
 
 @media only screen and (max-width: 500px) {
-  h1#name {
+  h1 {
     font-size: 30px;
     line-height: 38px;
   }
 }
 
 @media only screen and (max-width: 420px) {
-  h1#name {
+  h1 {
     font-size: 28px;
     line-height: 34px;
   }
