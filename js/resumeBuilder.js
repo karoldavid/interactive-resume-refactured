@@ -95,18 +95,18 @@ var work = {
 var projects = {
    "projects": [
      {
+        "title" : "Draft: Online Movie Poster Gallery",
+        "dates" : "2015",
+        "description" : "Polish Movie Poster Gallery Website with 120 photographs of original art works from 1955 to 1989",
+        "url" : "http://karoldavid.github.io/movie-poster-blog/",
+        "images" : ["images/dziecko_rosemary.svg", "images/zabity_na_smierc.svg", "images/w_mroku_nocy.svg"]
+     },
+     {
         "title" : "Draft: Responsive Website",
         "dates" : "2015",
         "description" : "Responsive Website for a Martial Arts School",
         "url" : "http://karoldavid.github.io/chinese-boxing-international/",
         "images" : ["images/cbii.svg"]
-     },
-     {
-        "title" : "Draft: Movie Poster Gallery Blog",
-        "dates" : "2015",
-        "description" : "Polish Movie Poster Gallery Website with art works from 1955 to 1989",
-        "url" : "http://karoldavid.github.io/movie-poster-blog/",
-        "images" : ["images/dziecko_rosemary.svg", "images/zabity_na_smierc.svg", "images/w_mroku_nocy.svg"]
      },
      {
        "title" : "Responsive Website",
