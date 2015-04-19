@@ -95,7 +95,7 @@ var work = {
 var projects = {
    "projects": [
      {
-        "title" : "Draft: Online Movie Poster Gallery",
+        "title" : "Work in Progress: Online Movie Poster Gallery",
         "dates" : "2015",
         "description" : "Polish Movie Poster Gallery Website with 120 photographs of original art works from 1955 to 1989",
         "url" : "http://karoldavid.github.io/movie-poster-blog/",
