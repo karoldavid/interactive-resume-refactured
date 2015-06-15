@@ -1,3 +1,5 @@
+"use strict";
+
 var bio = {
   "name" : "Karol Zyskowski",
   "role": "Web Developer",

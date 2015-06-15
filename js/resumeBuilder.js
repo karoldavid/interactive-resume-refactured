@@ -1,5 +1,7 @@
 
 $(function() {
+  "use strict";
+
   var model = {
     init: function() {
       if (!localStorage.notes) {
