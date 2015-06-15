@@ -1,4 +1,4 @@
-# Interactive Online Resume
+# Refacturing Interactive Resume
 
 ### Here is a link to the live version:
 
