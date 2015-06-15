@@ -40,7 +40,10 @@
           <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
         </svg>
       </a>
-      <div id="title" class="header-title"></div>
+      <div id="title" class="header-title">
+      	<h1 id="name"></h1>
+        <span id="role"></span><hr>
+      </div>
       <nav id="drawer" class="nav">
         <ul class="nav-list">
           <li class="nav-item">Career</li>
@@ -49,7 +52,11 @@
           <li class="nav-item">Locations</li>
         </ul>
       </nav>
-      <div id="info" class="header-info flex-info"></div>
+      <div id="info" class="header-info flex-info">
+      	 <h3 id="skillsH3">Skills at a Glance:</h3>
+      	 <ul id="skills" class="flex-column"></ul>
+      	  <span class="welcome-message"></span>
+      </div>
     </div>
 
     <main>
@@ -72,30 +79,17 @@
       </div>
     </main>
 
+  <script src="js/resumeData.js"></script>
   <script src="js/resumeBuilder.js"></script>
   <script>
 
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
-    }
-    if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
-    }
-    if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.backgroundColor = '#000';
-    }
-    if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.backgroundColor = '#000';
-    }
-    if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.backgroundColor = '#000';
-    }
-    if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('letsConnect').style.display = 'none';
-    }
-    if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.backgroundColor = '#000';
-    }
+    /**
+     * Navigation
+     *
+     *
+     *
+     *
+     */
 
     // hide all sections except google maps
     $('main .section').each( function(i,e) {
