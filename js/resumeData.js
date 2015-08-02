@@ -97,10 +97,10 @@ var work = {
 var projects = {
    "projects": [
      {
-        "title" : "Work in Progress: Online Movie Poster Gallery",
+        "title" : "Polish Movie Poster Gallery",
         "dates" : "2015",
         "description" : "Polish Movie Poster Gallery Website with 120 photographs of original art works from 1955 to 1989",
-        "url" : "http://karoldavid.github.io/movie-poster-blog/",
+        "url" : "http://www.polish-movie-poster.de/",
         "images" : ["images/dziecko_rosemary.svg", "images/zabity_na_smierc.svg", "images/w_mroku_nocy.svg"]
      },
      {
